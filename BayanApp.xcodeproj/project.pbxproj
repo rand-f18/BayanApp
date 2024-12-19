@@ -11,6 +11,7 @@
 		A7EB25C02D1350A700EC20D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB25BF2D1350A700EC20D4 /* ContentView.swift */; };
 		A7EB25C22D1350A900EC20D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7EB25C12D1350A900EC20D4 /* Assets.xcassets */; };
 		A7EB25C52D1350A900EC20D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7EB25C42D1350A900EC20D4 /* Preview Assets.xcassets */; };
+		A7EB25CC2D14544600EC20D4 /* Evaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB25CB2D14544600EC20D4 /* Evaluation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,8 @@
 		A7EB25BF2D1350A700EC20D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A7EB25C12D1350A900EC20D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7EB25C42D1350A900EC20D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A7EB25CB2D14544600EC20D4 /* Evaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evaluation.swift; sourceTree = "<group>"; };
+		A7EB25CD2D14552500EC20D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +54,10 @@
 		A7EB25BC2D1350A700EC20D4 /* BayanApp */ = {
 			isa = PBXGroup;
 			children = (
+				A7EB25CD2D14552500EC20D4 /* Info.plist */,
 				A7EB25BD2D1350A700EC20D4 /* BayanAppApp.swift */,
 				A7EB25BF2D1350A700EC20D4 /* ContentView.swift */,
+				A7EB25CB2D14544600EC20D4 /* Evaluation.swift */,
 				A7EB25C12D1350A900EC20D4 /* Assets.xcassets */,
 				A7EB25C32D1350A900EC20D4 /* Preview Content */,
 			);
@@ -137,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7EB25CC2D14544600EC20D4 /* Evaluation.swift in Sources */,
 				A7EB25C02D1350A700EC20D4 /* ContentView.swift in Sources */,
 				A7EB25BE2D1350A700EC20D4 /* BayanAppApp.swift in Sources */,
 			);
@@ -275,6 +281,7 @@
 				DEVELOPMENT_TEAM = 745FJCQPA9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BayanApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +311,7 @@
 				DEVELOPMENT_TEAM = 745FJCQPA9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BayanApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
