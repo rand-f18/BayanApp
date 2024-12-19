@@ -12,6 +12,10 @@
 		A7EB25C22D1350A900EC20D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7EB25C12D1350A900EC20D4 /* Assets.xcassets */; };
 		A7EB25C52D1350A900EC20D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7EB25C42D1350A900EC20D4 /* Preview Assets.xcassets */; };
 		A7EB25CC2D14544600EC20D4 /* Evaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB25CB2D14544600EC20D4 /* Evaluation.swift */; };
+		CFE6256E2D14725B00DE619C /* Kangaroo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6256D2D14725B00DE619C /* Kangaroo.swift */; };
+		CFE625702D1475D200DE619C /* Reindeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6256F2D1475D200DE619C /* Reindeer.swift */; };
+		CFE625722D14764E00DE619C /* Koala.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE625712D14764E00DE619C /* Koala.swift */; };
+		CFE625742D1476D300DE619C /* Turtle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE625732D1476D300DE619C /* Turtle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		A7EB25C42D1350A900EC20D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A7EB25CB2D14544600EC20D4 /* Evaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evaluation.swift; sourceTree = "<group>"; };
 		A7EB25CD2D14552500EC20D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CFE6256D2D14725B00DE619C /* Kangaroo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kangaroo.swift; sourceTree = "<group>"; };
+		CFE6256F2D1475D200DE619C /* Reindeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reindeer.swift; sourceTree = "<group>"; };
+		CFE625712D14764E00DE619C /* Koala.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Koala.swift; sourceTree = "<group>"; };
+		CFE625732D1476D300DE619C /* Turtle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Turtle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,10 @@
 				A7EB25BD2D1350A700EC20D4 /* BayanAppApp.swift */,
 				A7EB25BF2D1350A700EC20D4 /* ContentView.swift */,
 				A7EB25CB2D14544600EC20D4 /* Evaluation.swift */,
+				CFE6256D2D14725B00DE619C /* Kangaroo.swift */,
+				CFE6256F2D1475D200DE619C /* Reindeer.swift */,
+				CFE625712D14764E00DE619C /* Koala.swift */,
+				CFE625732D1476D300DE619C /* Turtle.swift */,
 				A7EB25C12D1350A900EC20D4 /* Assets.xcassets */,
 				A7EB25C32D1350A900EC20D4 /* Preview Content */,
 			);
@@ -145,6 +157,10 @@
 				A7EB25CC2D14544600EC20D4 /* Evaluation.swift in Sources */,
 				A7EB25C02D1350A700EC20D4 /* ContentView.swift in Sources */,
 				A7EB25BE2D1350A700EC20D4 /* BayanAppApp.swift in Sources */,
+				CFE625702D1475D200DE619C /* Reindeer.swift in Sources */,
+				CFE625722D14764E00DE619C /* Koala.swift in Sources */,
+				CFE6256E2D14725B00DE619C /* Kangaroo.swift in Sources */,
+				CFE625742D1476D300DE619C /* Turtle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
