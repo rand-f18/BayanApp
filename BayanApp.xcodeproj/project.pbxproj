@@ -7,29 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A7EB25BE2D1350A700EC20D4 /* BayanAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB25BD2D1350A700EC20D4 /* BayanAppApp.swift */; };
-		A7EB25C02D1350A700EC20D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB25BF2D1350A700EC20D4 /* ContentView.swift */; };
+		0299F1422D19AF3E00A6DE71 /* AnimaleModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F1412D19AF3100A6DE71 /* AnimaleModule.swift */; };
+		0299F1442D19AF5C00A6DE71 /* BayanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F1432D19AF5300A6DE71 /* BayanApp.swift */; };
+		0299F1462D19AF9A00A6DE71 /* lerrerRViewModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F1452D19AF9A00A6DE71 /* lerrerRViewModule.swift */; };
+		0299F14E2D19AFB400A6DE71 /* LetterGViewModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F1472D19AFB400A6DE71 /* LetterGViewModule.swift */; };
+		0299F14F2D19AFB400A6DE71 /* LettersPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F1492D19AFB400A6DE71 /* LettersPage.swift */; };
+		0299F1502D19AFB400A6DE71 /* SoundPlayerViewModel 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F14B2D19AFB400A6DE71 /* SoundPlayerViewModel 2.swift */; };
+		0299F1512D19AFB400A6DE71 /* LetterSViewModule 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F14A2D19AFB400A6DE71 /* LetterSViewModule 2.swift */; };
+		0299F1522D19AFB400A6DE71 /* Top Section View 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F14C2D19AFB400A6DE71 /* Top Section View 2.swift */; };
+		0299F1532D19AFB400A6DE71 /* LetterKViewModel 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F1482D19AFB400A6DE71 /* LetterKViewModel 2.swift */; };
+		0299F1542D19AFB400A6DE71 /* TopSectionViewModel 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F14D2D19AFB400A6DE71 /* TopSectionViewModel 2.swift */; };
+		0299F1592D19AFDE00A6DE71 /* splash screen 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F1572D19AFDE00A6DE71 /* splash screen 2.swift */; };
+		0299F15A2D19AFDE00A6DE71 /* Koala 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F1552D19AFDE00A6DE71 /* Koala 2.swift */; };
+		0299F15B2D19AFDE00A6DE71 /* Turtle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F1582D19AFDE00A6DE71 /* Turtle.swift */; };
+		0299F15C2D19AFDE00A6DE71 /* Reindeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F1562D19AFDE00A6DE71 /* Reindeer.swift */; };
+		0299F15E2D19B01400A6DE71 /* Choose the character 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F15D2D19B01400A6DE71 /* Choose the character 2.swift */; };
+		0299F1602D19B05000A6DE71 /* Kangaroo 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F15F2D19B05000A6DE71 /* Kangaroo 2.swift */; };
 		A7EB25C22D1350A900EC20D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7EB25C12D1350A900EC20D4 /* Assets.xcassets */; };
 		A7EB25C52D1350A900EC20D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7EB25C42D1350A900EC20D4 /* Preview Assets.xcassets */; };
 		A7EB25CC2D14544600EC20D4 /* Evaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB25CB2D14544600EC20D4 /* Evaluation.swift */; };
-		CFE6256E2D14725B00DE619C /* Kangaroo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6256D2D14725B00DE619C /* Kangaroo.swift */; };
-		CFE625702D1475D200DE619C /* Reindeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6256F2D1475D200DE619C /* Reindeer.swift */; };
-		CFE625722D14764E00DE619C /* Koala.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE625712D14764E00DE619C /* Koala.swift */; };
-		CFE625742D1476D300DE619C /* Turtle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE625732D1476D300DE619C /* Turtle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0299F1412D19AF3100A6DE71 /* AnimaleModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimaleModule.swift; sourceTree = "<group>"; };
+		0299F1432D19AF5300A6DE71 /* BayanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayanApp.swift; sourceTree = "<group>"; };
+		0299F1452D19AF9A00A6DE71 /* lerrerRViewModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lerrerRViewModule.swift; sourceTree = "<group>"; };
+		0299F1472D19AFB400A6DE71 /* LetterGViewModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterGViewModule.swift; sourceTree = "<group>"; };
+		0299F1482D19AFB400A6DE71 /* LetterKViewModel 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LetterKViewModel 2.swift"; sourceTree = "<group>"; };
+		0299F1492D19AFB400A6DE71 /* LettersPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettersPage.swift; sourceTree = "<group>"; };
+		0299F14A2D19AFB400A6DE71 /* LetterSViewModule 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LetterSViewModule 2.swift"; sourceTree = "<group>"; };
+		0299F14B2D19AFB400A6DE71 /* SoundPlayerViewModel 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoundPlayerViewModel 2.swift"; sourceTree = "<group>"; };
+		0299F14C2D19AFB400A6DE71 /* Top Section View 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Top Section View 2.swift"; sourceTree = "<group>"; };
+		0299F14D2D19AFB400A6DE71 /* TopSectionViewModel 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopSectionViewModel 2.swift"; sourceTree = "<group>"; };
+		0299F1552D19AFDE00A6DE71 /* Koala 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Koala 2.swift"; sourceTree = "<group>"; };
+		0299F1562D19AFDE00A6DE71 /* Reindeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reindeer.swift; sourceTree = "<group>"; };
+		0299F1572D19AFDE00A6DE71 /* splash screen 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "splash screen 2.swift"; sourceTree = "<group>"; };
+		0299F1582D19AFDE00A6DE71 /* Turtle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Turtle.swift; sourceTree = "<group>"; };
+		0299F15D2D19B01400A6DE71 /* Choose the character 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Choose the character 2.swift"; sourceTree = "<group>"; };
+		0299F15F2D19B05000A6DE71 /* Kangaroo 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Kangaroo 2.swift"; sourceTree = "<group>"; };
 		A7EB25BA2D1350A700EC20D4 /* BayanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BayanApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7EB25BD2D1350A700EC20D4 /* BayanAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayanAppApp.swift; sourceTree = "<group>"; };
-		A7EB25BF2D1350A700EC20D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A7EB25C12D1350A900EC20D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7EB25C42D1350A900EC20D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A7EB25CB2D14544600EC20D4 /* Evaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evaluation.swift; sourceTree = "<group>"; };
 		A7EB25CD2D14552500EC20D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		CFE6256D2D14725B00DE619C /* Kangaroo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kangaroo.swift; sourceTree = "<group>"; };
-		CFE6256F2D1475D200DE619C /* Reindeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reindeer.swift; sourceTree = "<group>"; };
-		CFE625712D14764E00DE619C /* Koala.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Koala.swift; sourceTree = "<group>"; };
-		CFE625732D1476D300DE619C /* Turtle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Turtle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,13 +83,23 @@
 			isa = PBXGroup;
 			children = (
 				A7EB25CD2D14552500EC20D4 /* Info.plist */,
-				A7EB25BD2D1350A700EC20D4 /* BayanAppApp.swift */,
-				A7EB25BF2D1350A700EC20D4 /* ContentView.swift */,
 				A7EB25CB2D14544600EC20D4 /* Evaluation.swift */,
-				CFE6256D2D14725B00DE619C /* Kangaroo.swift */,
-				CFE6256F2D1475D200DE619C /* Reindeer.swift */,
-				CFE625712D14764E00DE619C /* Koala.swift */,
-				CFE625732D1476D300DE619C /* Turtle.swift */,
+				0299F1432D19AF5300A6DE71 /* BayanApp.swift */,
+				0299F14B2D19AFB400A6DE71 /* SoundPlayerViewModel 2.swift */,
+				0299F14D2D19AFB400A6DE71 /* TopSectionViewModel 2.swift */,
+				0299F14C2D19AFB400A6DE71 /* Top Section View 2.swift */,
+				0299F1412D19AF3100A6DE71 /* AnimaleModule.swift */,
+				0299F1552D19AFDE00A6DE71 /* Koala 2.swift */,
+				0299F1572D19AFDE00A6DE71 /* splash screen 2.swift */,
+				0299F1492D19AFB400A6DE71 /* LettersPage.swift */,
+				0299F15F2D19B05000A6DE71 /* Kangaroo 2.swift */,
+				0299F1582D19AFDE00A6DE71 /* Turtle.swift */,
+				0299F1482D19AFB400A6DE71 /* LetterKViewModel 2.swift */,
+				0299F14A2D19AFB400A6DE71 /* LetterSViewModule 2.swift */,
+				0299F15D2D19B01400A6DE71 /* Choose the character 2.swift */,
+				0299F1472D19AFB400A6DE71 /* LetterGViewModule.swift */,
+				0299F1562D19AFDE00A6DE71 /* Reindeer.swift */,
+				0299F1452D19AF9A00A6DE71 /* lerrerRViewModule.swift */,
 				A7EB25C12D1350A900EC20D4 /* Assets.xcassets */,
 				A7EB25C32D1350A900EC20D4 /* Preview Content */,
 			);
@@ -155,12 +185,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7EB25CC2D14544600EC20D4 /* Evaluation.swift in Sources */,
-				A7EB25C02D1350A700EC20D4 /* ContentView.swift in Sources */,
-				A7EB25BE2D1350A700EC20D4 /* BayanAppApp.swift in Sources */,
-				CFE625702D1475D200DE619C /* Reindeer.swift in Sources */,
-				CFE625722D14764E00DE619C /* Koala.swift in Sources */,
-				CFE6256E2D14725B00DE619C /* Kangaroo.swift in Sources */,
-				CFE625742D1476D300DE619C /* Turtle.swift in Sources */,
+				0299F1462D19AF9A00A6DE71 /* lerrerRViewModule.swift in Sources */,
+				0299F1442D19AF5C00A6DE71 /* BayanApp.swift in Sources */,
+				0299F14E2D19AFB400A6DE71 /* LetterGViewModule.swift in Sources */,
+				0299F14F2D19AFB400A6DE71 /* LettersPage.swift in Sources */,
+				0299F1502D19AFB400A6DE71 /* SoundPlayerViewModel 2.swift in Sources */,
+				0299F1512D19AFB400A6DE71 /* LetterSViewModule 2.swift in Sources */,
+				0299F1522D19AFB400A6DE71 /* Top Section View 2.swift in Sources */,
+				0299F15E2D19B01400A6DE71 /* Choose the character 2.swift in Sources */,
+				0299F1532D19AFB400A6DE71 /* LetterKViewModel 2.swift in Sources */,
+				0299F1592D19AFDE00A6DE71 /* splash screen 2.swift in Sources */,
+				0299F1602D19B05000A6DE71 /* Kangaroo 2.swift in Sources */,
+				0299F15A2D19AFDE00A6DE71 /* Koala 2.swift in Sources */,
+				0299F15B2D19AFDE00A6DE71 /* Turtle.swift in Sources */,
+				0299F15C2D19AFDE00A6DE71 /* Reindeer.swift in Sources */,
+				0299F1542D19AFB400A6DE71 /* TopSectionViewModel 2.swift in Sources */,
+				0299F1422D19AF3E00A6DE71 /* AnimaleModule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
