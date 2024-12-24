@@ -104,14 +104,7 @@ struct LetterRView: View {
                     // Pause the sound when the view disappears
                     viewModel.pauseSound()
                 }
-                .onChange(of: topSectionViewModel.isMuted) { newValue in
-                    // Toggle sound based on mute state
-                    if newValue {
-                        viewModel.pauseSound()
-                    } else {
-                        viewModel.resumeSound()
-                    }
-        }
+                
     }
 }
 
@@ -127,90 +120,3 @@ struct LetterRView: View {
 
 
 
-
-
-/*
-import SwiftUI
-import AVFoundation
-
-struct LetterRView: View {
-    @StateObject private var viewModel = SoundPlayerViewModel() // ViewModel
-    let lightGreen = Color(red: 0.94, green: 0.98, blue: 0.92)
-    @State private var letterColor: Color = Color("letterGreen")
-
-    var body: some View {
-        VStack(spacing: 0) {
-            // Top Section
-            ZStack(alignment: .leading) {
-                lightGreen // Background color
-                
-                HStack(spacing: 20) {
-                    // Avatar Image
-                    Image("happyboy") // Replace with your image asset name
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 100, height: 100)
-                        .clipShape(Circle())
-                        .background(
-                            Circle()
-                                .fill(Color.green)
-                                .frame(width: 120, height: 120)
-                        )
-                        .padding(.leading, 20) // Left padding for alignment
-                    
-                    
-                }
-                .padding(.top, 10) // Vertical spacing
-            }
-            .frame(height: 150) // Top section height
-            
-            // Main Content
-            ZStack {
-                Color(UIColor.systemBackground)
-                    .edgesIgnoringSafeArea(.all)
-                
-                VStack(spacing: 0) {
-                    ZStack{
-                        // Center rectangle
-                        RoundedRectangle(cornerRadius: 25)
-                            .foregroundColor(lightGreen)
-                            .frame(width: 650, height: 750)
-                            .overlay(
-                                // Centered button inside the rectangle
-                                Button(action: {
-                                    viewModel.playSound(named: "Rletter")
-                                }) {
-                                    Text("ر")
-                                        .font(.system(size: 120))
-                                        .foregroundColor(.gray)
-                                        .padding()
-                                        .frame(width: 160, height: 160)
-                                        .background(Color.white)
-                                        .cornerRadius(80)
-                                        .clipShape(Circle()) // Ensures the button matches the image shape
-                                        .shadow(radius: 5)
-                                }
-                            )
-                        
-                        // Image positioned below the rectangle
-                        GeometryReader { geometry in
-                            Image(.raccoon) // Ensure the image name matches your assets
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 400, height: 250) // Adjust the size of the image
-                                .position(x: 150, y: geometry.size.height - 240) // Position image at left bottom corner
-                        }
-                    }
-                }
-            }
-        }
-        .edgesIgnoringSafeArea(.top)
-    }
-}
-
-
-#Preview {
-    LetterRView()
-}
-
-*/

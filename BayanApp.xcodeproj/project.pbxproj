@@ -18,14 +18,13 @@
 		0299F1532D19AFB400A6DE71 /* LetterKViewModel 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F1482D19AFB400A6DE71 /* LetterKViewModel 2.swift */; };
 		0299F1542D19AFB400A6DE71 /* TopSectionViewModel 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F14D2D19AFB400A6DE71 /* TopSectionViewModel 2.swift */; };
 		0299F1592D19AFDE00A6DE71 /* splash screen 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F1572D19AFDE00A6DE71 /* splash screen 2.swift */; };
-		0299F15B2D19AFDE00A6DE71 /* Turtle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F1582D19AFDE00A6DE71 /* Turtle.swift */; };
 		0299F15C2D19AFDE00A6DE71 /* Reindeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F1562D19AFDE00A6DE71 /* Reindeer.swift */; };
 		0299F15E2D19B01400A6DE71 /* Choose the character 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F15D2D19B01400A6DE71 /* Choose the character 2.swift */; };
-		0299F1602D19B05000A6DE71 /* Kangaroo 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F15F2D19B05000A6DE71 /* Kangaroo 2.swift */; };
+		02F08C072D1B28EF004D5C4E /* LetterModewl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F08C062D1B28E5004D5C4E /* LetterModewl.swift */; };
+		02F08C092D1B2927004D5C4E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F08C082D1B291A004D5C4E /* MapView.swift */; };
 		A7EB25C22D1350A900EC20D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7EB25C12D1350A900EC20D4 /* Assets.xcassets */; };
 		A7EB25C52D1350A900EC20D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7EB25C42D1350A900EC20D4 /* Preview Assets.xcassets */; };
 		A7EB25CC2D14544600EC20D4 /* Evaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB25CB2D14544600EC20D4 /* Evaluation.swift */; };
-		CFE626242D1ADC3300DE619C /* Koala 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE626232D1ADC3300DE619C /* Koala 2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,15 +40,14 @@
 		0299F14D2D19AFB400A6DE71 /* TopSectionViewModel 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopSectionViewModel 2.swift"; sourceTree = "<group>"; };
 		0299F1562D19AFDE00A6DE71 /* Reindeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reindeer.swift; sourceTree = "<group>"; };
 		0299F1572D19AFDE00A6DE71 /* splash screen 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "splash screen 2.swift"; sourceTree = "<group>"; };
-		0299F1582D19AFDE00A6DE71 /* Turtle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Turtle.swift; sourceTree = "<group>"; };
 		0299F15D2D19B01400A6DE71 /* Choose the character 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Choose the character 2.swift"; sourceTree = "<group>"; };
-		0299F15F2D19B05000A6DE71 /* Kangaroo 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Kangaroo 2.swift"; sourceTree = "<group>"; };
+		02F08C062D1B28E5004D5C4E /* LetterModewl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterModewl.swift; sourceTree = "<group>"; };
+		02F08C082D1B291A004D5C4E /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A7EB25BA2D1350A700EC20D4 /* BayanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BayanApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7EB25C12D1350A900EC20D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7EB25C42D1350A900EC20D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A7EB25CB2D14544600EC20D4 /* Evaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evaluation.swift; sourceTree = "<group>"; };
 		A7EB25CD2D14552500EC20D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		CFE626232D1ADC3300DE619C /* Koala 2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Koala 2.swift"; path = "../../../.Trash/Koala 2.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,11 +87,10 @@
 				0299F14D2D19AFB400A6DE71 /* TopSectionViewModel 2.swift */,
 				0299F14C2D19AFB400A6DE71 /* Top Section View 2.swift */,
 				0299F1412D19AF3100A6DE71 /* AnimaleModule.swift */,
-				CFE626232D1ADC3300DE619C /* Koala 2.swift */,
+				02F08C062D1B28E5004D5C4E /* LetterModewl.swift */,
 				0299F1572D19AFDE00A6DE71 /* splash screen 2.swift */,
 				0299F1492D19AFB400A6DE71 /* LettersPage.swift */,
-				0299F15F2D19B05000A6DE71 /* Kangaroo 2.swift */,
-				0299F1582D19AFDE00A6DE71 /* Turtle.swift */,
+				02F08C082D1B291A004D5C4E /* MapView.swift */,
 				0299F1482D19AFB400A6DE71 /* LetterKViewModel 2.swift */,
 				0299F14A2D19AFB400A6DE71 /* LetterSViewModule 2.swift */,
 				0299F1472D19AFB400A6DE71 /* LetterGViewModule.swift */,
@@ -185,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7EB25CC2D14544600EC20D4 /* Evaluation.swift in Sources */,
+				02F08C092D1B2927004D5C4E /* MapView.swift in Sources */,
 				0299F1462D19AF9A00A6DE71 /* lerrerRViewModule.swift in Sources */,
 				0299F1442D19AF5C00A6DE71 /* BayanApp.swift in Sources */,
 				0299F14E2D19AFB400A6DE71 /* LetterGViewModule.swift in Sources */,
@@ -195,12 +193,10 @@
 				0299F15E2D19B01400A6DE71 /* Choose the character 2.swift in Sources */,
 				0299F1532D19AFB400A6DE71 /* LetterKViewModel 2.swift in Sources */,
 				0299F1592D19AFDE00A6DE71 /* splash screen 2.swift in Sources */,
-				0299F1602D19B05000A6DE71 /* Kangaroo 2.swift in Sources */,
-				0299F15B2D19AFDE00A6DE71 /* Turtle.swift in Sources */,
 				0299F15C2D19AFDE00A6DE71 /* Reindeer.swift in Sources */,
 				0299F1542D19AFB400A6DE71 /* TopSectionViewModel 2.swift in Sources */,
-				CFE626242D1ADC3300DE619C /* Koala 2.swift in Sources */,
 				0299F1422D19AF3E00A6DE71 /* AnimaleModule.swift in Sources */,
+				02F08C072D1B28EF004D5C4E /* LetterModewl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

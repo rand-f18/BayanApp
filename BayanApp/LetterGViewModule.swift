@@ -97,14 +97,7 @@ struct LetterGView: View {
                     // Pause the sound when the view disappears
                     viewModel.pauseSound()
                 }
-                .onChange(of: topSectionViewModel.isMuted) { newValue in
-                    // Toggle sound based on mute state
-                    if newValue {
-                        viewModel.pauseSound()
-                    } else {
-                        viewModel.resumeSound()
-                    }
-        }
+               
     }
 }
 

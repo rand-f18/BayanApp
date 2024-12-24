@@ -9,7 +9,7 @@ struct LetterKView: View {
     @State private var currentAnimal = Animal(name: "kangaroo") // Default animal
     @State private var xOffset: CGFloat = -390 // Control horizontal position
        @State private var yOffset: CGFloat = 200 // Control vertical position
-
+    @Binding var isTrainUnlocked: Bool
     var body: some View {
         VStack(spacing: 0) {
             // Top Section
@@ -86,6 +86,19 @@ struct LetterKView: View {
                     }
                 }
             }
+            VStack {
+                      Text("Train Unlocked: \(isTrainUnlocked ? "Yes" : "No")")
+                      
+                      Button(action: {
+                          isTrainUnlocked.toggle()
+                      }) {
+                          Text("Toggle Train Unlocked")
+                              .padding()
+                              .background(Color.blue)
+                              .foregroundColor(.white)
+                              .cornerRadius(10)
+                      }
+                  
         }
         .edgesIgnoringSafeArea(.top)
                 .onAppear {
@@ -98,19 +111,12 @@ struct LetterKView: View {
                     // Pause the sound when the view disappears
                     viewModel.pauseSound()
                 }
-                .onChange(of: topSectionViewModel.isMuted) { newValue in
-                    // Toggle sound based on mute state
-                    if newValue {
-                        viewModel.pauseSound()
-                    } else {
-                        viewModel.resumeSound()
-                    }
         }
     }
 }
 
 #Preview {
-    LetterKView()
+    LetterKView(isTrainUnlocked: .constant(false ))
 }
 
 
