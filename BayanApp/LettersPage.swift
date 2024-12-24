@@ -10,12 +10,12 @@ struct LettersView: View {
 
     let buttonData: [LetterModel] = [
         LetterModel(letter: "ج", soundAssetName: "Gletter", description: "Camel description", animal: Animal(name: "camel"), imageNames: ["camelButton"], lightGreenColor: .green),
-        LetterModel(letter: "ث", soundAssetName: "FoxSound", description: "Fox description", animal: Animal(name: "fox"), imageNames: ["FoxButton"], lightGreenColor: .orange),
+        LetterModel(letter: "ث", soundAssetName: "FoxSound", description: "Fox description", animal: Animal(name: "fox"), imageNames: ["FoxButtton"], lightGreenColor: .orange),
         LetterModel(letter: "ش", soundAssetName: "LionSound", description: "Lion description", animal: Animal(name: "lion"), imageNames: ["LionButton"], lightGreenColor: .purple),
         LetterModel(letter: "غ", soundAssetName: "GSound", description: "Gazelle description", animal: Animal(name: "gazelle"), imageNames: ["GazelleButton"], lightGreenColor: .red),
-        LetterModel(letter: "ك", soundAssetName: "Kletter", description: "Kangaroo description", animal: Animal(name: "kangaroo"), imageNames: ["KangarooButton"], lightGreenColor: .blue),
+        LetterModel(letter: "ك", soundAssetName: "Kletter", description: "Kangaroo description", animal: Animal(name: "kangaroo"), imageNames: ["kangrooButton"], lightGreenColor: .blue),
         LetterModel(letter: "س", soundAssetName: "Sletter", description: "Turtle description", animal: Animal(name: "turtle"), imageNames: ["TurtleButton"], lightGreenColor: .green),
-        LetterModel(letter: "ر", soundAssetName: "Rletter", description: "Raccoon description", animal: Animal(name: "raccoon"), imageNames: ["RaccoonButton"], lightGreenColor: .yellow),
+        LetterModel(letter: "ر", soundAssetName: "Rletter", description: "Raccoon description", animal: Animal(name: "raccoon"), imageNames: ["RacconButton"], lightGreenColor: .yellow),
         LetterModel(letter: "خ", soundAssetName: "SheepSound", description: "Sheep description", animal: Animal(name: "sheep"), imageNames: ["SheepButton"], lightGreenColor: .brown)
     ]
 

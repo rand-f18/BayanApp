@@ -11,12 +11,14 @@ import SwiftUI
 
 // Model for the letter "S"
 
-    struct LetterModel {
-        var letter: String
-        var  soundAssetName: String
-        var  description: String
-        var  animal: Animal
-        var  imageNames: [String]
-        var  lightGreenColor: Color
-    }
+
+// Button model and button action
+struct LetterModel {
+    var letter: String
+    var soundAssetName: String
+    var description: String
+    var animal: Animal
+    var imageNames: [String]
+    var lightGreenColor: Color
+}
 
