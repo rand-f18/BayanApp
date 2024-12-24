@@ -14,7 +14,7 @@ struct LetterSView: View {
     @StateObject private var topSectionViewModel = TopSectionViewModel()
     let lightGreen = Color(red: 0.94, green: 0.98, blue: 0.92)
     @State private var currentImageIndex = 0
-    let imageNames = ["", "GProunounce"]
+    let imageNames = ["", "S"]
     @State private var currentAnimal = Animal(name: "turtle") // Default animal
     @State private var xOffset: CGFloat = -390 // Control horizontal position
        @State private var yOffset: CGFloat = 200 // Control vertical position
@@ -56,7 +56,10 @@ struct LetterSView: View {
                                                     
               // Second Image/Content
                         VStack {
-                            Text("تخرج الغين من أدنى الحلق ( أي أقربه للسان) مع منطقة الحنك اللحمي و قبل")
+                            Text("""
+                                    يتكون صوت السين بتطابق الأسنان الأمامية العليا على السفلى نسبًيا
+                                    ووضع طرف اللسان خلف الأسنان العليا أو السفلى.
+                                    """)
                             .font(.system(size: 30))
                             Image(imageNames[currentImageIndex == 0 ? 1 : 1])
                             .resizable()

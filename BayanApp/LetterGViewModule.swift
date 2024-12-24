@@ -5,7 +5,7 @@ struct LetterGView: View {
     @StateObject private var topSectionViewModel = TopSectionViewModel()
     let lightGreen = Color(red: 0.94, green: 0.98, blue: 0.92)
     @State private var currentImageIndex = 0
-    let imageNames = ["", "GProunounce"]
+    let imageNames = ["", "G"]
     @State private var currentAnimal = Animal(name: "gazelle") // Default animal
     @State private var xOffset: CGFloat = -390 // Control horizontal position
        @State private var yOffset: CGFloat = 200 // Control vertical position
@@ -47,7 +47,10 @@ struct LetterGView: View {
                                                     
               // Second Image/Content
                         VStack {
-                            Text("تخرج الغين من أدنى الحلق ( أي أقربه للسان) مع منطقة الحنك اللحمي و قبل")
+                            Text("""
+                                    تخرج الغين من أدنى الحلق (أي أقربه للسان) مع منطقة الحنك اللحمي
+                                    وقبل اللهاة مباشرة مع أصل اللسان.
+                                    """)
                             .font(.system(size: 30))
                             Image(imageNames[currentImageIndex == 0 ? 1 : 1])
                             .resizable()

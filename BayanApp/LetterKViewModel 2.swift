@@ -5,7 +5,7 @@ struct LetterKView: View {
     @StateObject private var topSectionViewModel = TopSectionViewModel()
     let lightGreen = Color(red: 0.94, green: 0.98, blue: 0.92)
     @State private var currentImageIndex = 0
-    let imageNames = ["", "GProunounce"]
+    let imageNames = ["", "K"]
     @State private var currentAnimal = Animal(name: "kangaroo") // Default animal
     @State private var xOffset: CGFloat = -390 // Control horizontal position
        @State private var yOffset: CGFloat = 200 // Control vertical position
@@ -47,7 +47,11 @@ struct LetterKView: View {
                                                     
               // Second Image/Content
                         VStack {
-                            Text("تخرج الغين من أدنى الحلق ( أي أقربه للسان) مع منطقة الحنك اللحمي و قبل")
+                            Text("""
+                                    يرتفع أقصى اللسان حتى يلتقي بأقصى الحنك الأعلى مع ضغط،
+                                    ثم ينطلق اندفاع الهواء مع انخفاض اللسان محدًثا عند اندفاعه
+                                    صوتا انفجارًيا وهو صوت الكاف.
+                                    """)
                             .font(.system(size: 30))
                             Image(imageNames[currentImageIndex == 0 ? 1 : 1])
                             .resizable()
@@ -108,3 +112,5 @@ struct LetterKView: View {
 #Preview {
     LetterKView()
 }
+
+

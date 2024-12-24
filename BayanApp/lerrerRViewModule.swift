@@ -12,7 +12,7 @@ struct LetterRView: View {
     @StateObject private var topSectionViewModel = TopSectionViewModel()
     let lightGreen = Color(red: 0.94, green: 0.98, blue: 0.92)
     @State private var currentImageIndex = 0
-    let imageNames = ["", "GProunounce"]
+    let imageNames = ["", "R"]
     @State private var currentAnimal = Animal(name: "Raccoon") // Default animal
     @State private var xOffset: CGFloat = -390 // Control horizontal position
        @State private var yOffset: CGFloat = 200 // Control vertical position
@@ -54,7 +54,10 @@ struct LetterRView: View {
                                                     
               // Second Image/Content
                         VStack {
-                            Text("تخرج الغين من أدنى الحلق ( أي أقربه للسان) مع منطقة الحنك اللحمي و قبل")
+                            Text("""
+                                    يتكون صوت الراء بواسطة التقاء طرف اللسان باللثة ويبتعد عنها مرات عديدة
+                                    فيسمع الصوت على صورة مجموعة من الانسحابات والانفجارات.
+                                    """)
                             .font(.system(size: 30))
                             Image(imageNames[currentImageIndex == 0 ? 1 : 1])
                             .resizable()
