@@ -7,42 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0299F1422D19AF3E00A6DE71 /* AnimaleModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F1412D19AF3100A6DE71 /* AnimaleModule.swift */; };
+		027BEBE22D1CAA17001BE28E /* lettersview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027BEBDD2D1CAA17001BE28E /* lettersview.swift */; };
+		027BEBE32D1CAA17001BE28E /* LearningViwe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027BEBDB2D1CAA17001BE28E /* LearningViwe.swift */; };
+		027BEBE42D1CAA17001BE28E /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027BEBDE2D1CAA17001BE28E /* Map.swift */; };
+		027BEBE52D1CAA17001BE28E /* TrainingViwe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027BEBE12D1CAA17001BE28E /* TrainingViwe.swift */; };
+		027BEBE62D1CAA17001BE28E /* SoundPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027BEBDF2D1CAA17001BE28E /* SoundPlayerViewModel.swift */; };
+		027BEBE72D1CAA17001BE28E /* LettersPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027BEBDC2D1CAA17001BE28E /* LettersPageModel.swift */; };
 		0299F1442D19AF5C00A6DE71 /* BayanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F1432D19AF5300A6DE71 /* BayanApp.swift */; };
-		0299F1462D19AF9A00A6DE71 /* lerrerRViewModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F1452D19AF9A00A6DE71 /* lerrerRViewModule.swift */; };
-		0299F14E2D19AFB400A6DE71 /* LetterGViewModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F1472D19AFB400A6DE71 /* LetterGViewModule.swift */; };
-		0299F14F2D19AFB400A6DE71 /* LettersPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F1492D19AFB400A6DE71 /* LettersPage.swift */; };
-		0299F1502D19AFB400A6DE71 /* SoundPlayerViewModel 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F14B2D19AFB400A6DE71 /* SoundPlayerViewModel 2.swift */; };
-		0299F1512D19AFB400A6DE71 /* LetterSViewModule 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F14A2D19AFB400A6DE71 /* LetterSViewModule 2.swift */; };
-		0299F1522D19AFB400A6DE71 /* Top Section View 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F14C2D19AFB400A6DE71 /* Top Section View 2.swift */; };
-		0299F1532D19AFB400A6DE71 /* LetterKViewModel 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F1482D19AFB400A6DE71 /* LetterKViewModel 2.swift */; };
-		0299F1542D19AFB400A6DE71 /* TopSectionViewModel 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F14D2D19AFB400A6DE71 /* TopSectionViewModel 2.swift */; };
-		0299F1592D19AFDE00A6DE71 /* splash screen 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F1572D19AFDE00A6DE71 /* splash screen 2.swift */; };
-		0299F15C2D19AFDE00A6DE71 /* Reindeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F1562D19AFDE00A6DE71 /* Reindeer.swift */; };
-		0299F15E2D19B01400A6DE71 /* Choose the character 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299F15D2D19B01400A6DE71 /* Choose the character 2.swift */; };
-		02F08C072D1B28EF004D5C4E /* LetterModewl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F08C062D1B28E5004D5C4E /* LetterModewl.swift */; };
-		02F08C092D1B2927004D5C4E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F08C082D1B291A004D5C4E /* MapView.swift */; };
 		A7EB25C22D1350A900EC20D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7EB25C12D1350A900EC20D4 /* Assets.xcassets */; };
 		A7EB25C52D1350A900EC20D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7EB25C42D1350A900EC20D4 /* Preview Assets.xcassets */; };
 		A7EB25CC2D14544600EC20D4 /* Evaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB25CB2D14544600EC20D4 /* Evaluation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0299F1412D19AF3100A6DE71 /* AnimaleModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimaleModule.swift; sourceTree = "<group>"; };
+		027BEBDB2D1CAA17001BE28E /* LearningViwe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningViwe.swift; sourceTree = "<group>"; };
+		027BEBDC2D1CAA17001BE28E /* LettersPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettersPageModel.swift; sourceTree = "<group>"; };
+		027BEBDD2D1CAA17001BE28E /* lettersview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lettersview.swift; sourceTree = "<group>"; };
+		027BEBDE2D1CAA17001BE28E /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		027BEBDF2D1CAA17001BE28E /* SoundPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayerViewModel.swift; sourceTree = "<group>"; };
+		027BEBE12D1CAA17001BE28E /* TrainingViwe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViwe.swift; sourceTree = "<group>"; };
 		0299F1432D19AF5300A6DE71 /* BayanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BayanApp.swift; sourceTree = "<group>"; };
-		0299F1452D19AF9A00A6DE71 /* lerrerRViewModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lerrerRViewModule.swift; sourceTree = "<group>"; };
-		0299F1472D19AFB400A6DE71 /* LetterGViewModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterGViewModule.swift; sourceTree = "<group>"; };
-		0299F1482D19AFB400A6DE71 /* LetterKViewModel 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LetterKViewModel 2.swift"; sourceTree = "<group>"; };
-		0299F1492D19AFB400A6DE71 /* LettersPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettersPage.swift; sourceTree = "<group>"; };
-		0299F14A2D19AFB400A6DE71 /* LetterSViewModule 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LetterSViewModule 2.swift"; sourceTree = "<group>"; };
-		0299F14B2D19AFB400A6DE71 /* SoundPlayerViewModel 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoundPlayerViewModel 2.swift"; sourceTree = "<group>"; };
-		0299F14C2D19AFB400A6DE71 /* Top Section View 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Top Section View 2.swift"; sourceTree = "<group>"; };
-		0299F14D2D19AFB400A6DE71 /* TopSectionViewModel 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopSectionViewModel 2.swift"; sourceTree = "<group>"; };
-		0299F1562D19AFDE00A6DE71 /* Reindeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reindeer.swift; sourceTree = "<group>"; };
-		0299F1572D19AFDE00A6DE71 /* splash screen 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "splash screen 2.swift"; sourceTree = "<group>"; };
-		0299F15D2D19B01400A6DE71 /* Choose the character 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Choose the character 2.swift"; sourceTree = "<group>"; };
-		02F08C062D1B28E5004D5C4E /* LetterModewl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterModewl.swift; sourceTree = "<group>"; };
-		02F08C082D1B291A004D5C4E /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A7EB25BA2D1350A700EC20D4 /* BayanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BayanApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7EB25C12D1350A900EC20D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7EB25C42D1350A900EC20D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -82,21 +66,13 @@
 			children = (
 				A7EB25CD2D14552500EC20D4 /* Info.plist */,
 				A7EB25CB2D14544600EC20D4 /* Evaluation.swift */,
+				027BEBDB2D1CAA17001BE28E /* LearningViwe.swift */,
+				027BEBDC2D1CAA17001BE28E /* LettersPageModel.swift */,
+				027BEBDD2D1CAA17001BE28E /* lettersview.swift */,
+				027BEBDE2D1CAA17001BE28E /* Map.swift */,
+				027BEBDF2D1CAA17001BE28E /* SoundPlayerViewModel.swift */,
+				027BEBE12D1CAA17001BE28E /* TrainingViwe.swift */,
 				0299F1432D19AF5300A6DE71 /* BayanApp.swift */,
-				0299F14B2D19AFB400A6DE71 /* SoundPlayerViewModel 2.swift */,
-				0299F14D2D19AFB400A6DE71 /* TopSectionViewModel 2.swift */,
-				0299F14C2D19AFB400A6DE71 /* Top Section View 2.swift */,
-				0299F1412D19AF3100A6DE71 /* AnimaleModule.swift */,
-				02F08C062D1B28E5004D5C4E /* LetterModewl.swift */,
-				0299F1572D19AFDE00A6DE71 /* splash screen 2.swift */,
-				0299F1492D19AFB400A6DE71 /* LettersPage.swift */,
-				02F08C082D1B291A004D5C4E /* MapView.swift */,
-				0299F1482D19AFB400A6DE71 /* LetterKViewModel 2.swift */,
-				0299F14A2D19AFB400A6DE71 /* LetterSViewModule 2.swift */,
-				0299F1472D19AFB400A6DE71 /* LetterGViewModule.swift */,
-				0299F1452D19AF9A00A6DE71 /* lerrerRViewModule.swift */,
-				0299F15D2D19B01400A6DE71 /* Choose the character 2.swift */,
-				0299F1562D19AFDE00A6DE71 /* Reindeer.swift */,
 				A7EB25C12D1350A900EC20D4 /* Assets.xcassets */,
 				A7EB25C32D1350A900EC20D4 /* Preview Content */,
 			);
@@ -182,21 +158,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7EB25CC2D14544600EC20D4 /* Evaluation.swift in Sources */,
-				02F08C092D1B2927004D5C4E /* MapView.swift in Sources */,
-				0299F1462D19AF9A00A6DE71 /* lerrerRViewModule.swift in Sources */,
+				027BEBE22D1CAA17001BE28E /* lettersview.swift in Sources */,
+				027BEBE32D1CAA17001BE28E /* LearningViwe.swift in Sources */,
+				027BEBE42D1CAA17001BE28E /* Map.swift in Sources */,
+				027BEBE52D1CAA17001BE28E /* TrainingViwe.swift in Sources */,
+				027BEBE62D1CAA17001BE28E /* SoundPlayerViewModel.swift in Sources */,
+				027BEBE72D1CAA17001BE28E /* LettersPageModel.swift in Sources */,
 				0299F1442D19AF5C00A6DE71 /* BayanApp.swift in Sources */,
-				0299F14E2D19AFB400A6DE71 /* LetterGViewModule.swift in Sources */,
-				0299F14F2D19AFB400A6DE71 /* LettersPage.swift in Sources */,
-				0299F1502D19AFB400A6DE71 /* SoundPlayerViewModel 2.swift in Sources */,
-				0299F1512D19AFB400A6DE71 /* LetterSViewModule 2.swift in Sources */,
-				0299F1522D19AFB400A6DE71 /* Top Section View 2.swift in Sources */,
-				0299F15E2D19B01400A6DE71 /* Choose the character 2.swift in Sources */,
-				0299F1532D19AFB400A6DE71 /* LetterKViewModel 2.swift in Sources */,
-				0299F1592D19AFDE00A6DE71 /* splash screen 2.swift in Sources */,
-				0299F15C2D19AFDE00A6DE71 /* Reindeer.swift in Sources */,
-				0299F1542D19AFB400A6DE71 /* TopSectionViewModel 2.swift in Sources */,
-				0299F1422D19AF3E00A6DE71 /* AnimaleModule.swift in Sources */,
-				02F08C072D1B28EF004D5C4E /* LetterModewl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,7 +298,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BayanApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 745FJCQPA9;
+				DEVELOPMENT_TEAM = HJM4FSF794;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BayanApp/Info.plist;
@@ -360,7 +328,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BayanApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 745FJCQPA9;
+				DEVELOPMENT_TEAM = HJM4FSF794;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BayanApp/Info.plist;

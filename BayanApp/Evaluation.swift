@@ -19,9 +19,10 @@ struct EvaluationContentView: View {
             Text(audioRecorder.targetLetter)
                 .font(.system(size: 150)) // Large font size for visibility
                 .frame(width: 200, height: 200) // Fixed size for the square
-                .background(audioRecorder.isPassed ? Color.green : Color.blue) // Change color based on success
+                .background(audioRecorder.isPassed ? Color.green : Color.white) // Change color based on success
                 .cornerRadius(10)
-                .foregroundColor(.white)
+                .foregroundColor(.gray)
+                .shadow(radius: 19)
                 .animation(.easeInOut(duration: 0.5), value: audioRecorder.isPassed)
             
             // Record button
@@ -35,7 +36,7 @@ struct EvaluationContentView: View {
                 Text(audioRecorder.isRecording ? "إيقاف التسجيل" : "بدء التسجيل")
                     .font(.title)
                     .padding()
-                    .background(audioRecorder.isRecording ? Color.red : Color.blue)
+                    .background(audioRecorder.isRecording ? Color.red : Color.green.opacity(2))
                     .foregroundColor(.white)
                     .cornerRadius(10)
             }
