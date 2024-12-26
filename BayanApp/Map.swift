@@ -109,24 +109,21 @@ struct MapViewForKLetter: View {
                     }
                 )
             case .launch:
-                VStack {
-                    Text("مرحبا بك في مستوى انطلق!")
-                        .font(.largeTitle)
-                        .padding()
-                    
-                    Button("عودة") {
-                        currentView = .map
-                    }
-                    .padding()
-                    .frame(width: 200, height: 60)
-                    .background(Color.orange)
-                    .foregroundColor(.white)
-                    .cornerRadius(12)
-                }
+                SinEvaluationContentView()
             }
         }
         .padding()
     }
+    @ViewBuilder
+        private func determineLaunchDestination(for letter: LettterModel) -> some View {
+            switch letter.letter {
+            case "ر":
+                SinEvaluationContentView()
+            
+            default:
+                Text("Invalid letter selected for Launch.")
+            }
+        }
     // Define view types for navigation
     enum ViewType {
         case map
