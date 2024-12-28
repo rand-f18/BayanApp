@@ -118,8 +118,14 @@ struct MapViewForKLetter: View {
         private func determineLaunchDestination(for letter: LettterModel) -> some View {
             switch letter.letter {
             case "ر":
+                EvaluationContentView()
+            case "س":
                 SinEvaluationContentView()
-            
+            case "ج":
+                GEvaluationContentView()
+            case"ث":
+            ThEvaluationContentView()
+                
             default:
                 Text("Invalid letter selected for Launch.")
             }

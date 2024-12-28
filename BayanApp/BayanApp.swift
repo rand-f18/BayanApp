@@ -18,7 +18,7 @@ import SwiftUI
 struct BayanAppApp: App {
     var body: some Scene {
         WindowGroup {
-            LettersView()
+            CharacterPage()
         }
     }
 }

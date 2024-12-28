@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		024352662D207F5A0001C847 /* choose the character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024352652D207F510001C847 /* choose the character.swift */; };
 		027BEBE22D1CAA17001BE28E /* lettersview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027BEBDD2D1CAA17001BE28E /* lettersview.swift */; };
 		027BEBE32D1CAA17001BE28E /* LearningViwe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027BEBDB2D1CAA17001BE28E /* LearningViwe.swift */; };
 		027BEBE42D1CAA17001BE28E /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027BEBDE2D1CAA17001BE28E /* Map.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		024352652D207F510001C847 /* choose the character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "choose the character.swift"; sourceTree = "<group>"; };
 		027BEBDB2D1CAA17001BE28E /* LearningViwe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningViwe.swift; sourceTree = "<group>"; };
 		027BEBDC2D1CAA17001BE28E /* LettersPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettersPageModel.swift; sourceTree = "<group>"; };
 		027BEBDD2D1CAA17001BE28E /* lettersview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lettersview.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				A7EB25CB2D14544600EC20D4 /* REvaluation.swift */,
 				A72D785E2D1D8A5600C15960 /* ThEvaluation.swift */,
 				A72D785A2D1D8A1E00C15960 /* GEvaluation.swift */,
+				024352652D207F510001C847 /* choose the character.swift */,
 				A72D785C2D1D8A3B00C15960 /* SEvaluation.swift */,
 				027BEBDB2D1CAA17001BE28E /* LearningViwe.swift */,
 				027BEBDC2D1CAA17001BE28E /* LettersPageModel.swift */,
@@ -166,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				024352662D207F5A0001C847 /* choose the character.swift in Sources */,
 				A7EB25CC2D14544600EC20D4 /* REvaluation.swift in Sources */,
 				027BEBE22D1CAA17001BE28E /* lettersview.swift in Sources */,
 				A72D785B2D1D8A1E00C15960 /* GEvaluation.swift in Sources */,

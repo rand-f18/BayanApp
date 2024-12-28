@@ -1,9 +1,3 @@
-//
-//  SoundPlayerViewModel.swift
-//  TestLearning
-//
-//  Created by Wafa Awad  on 25/12/2024.
-//
 import SwiftUI
 import AVFoundation
 
@@ -15,6 +9,7 @@ class SoundPlayerViewModel: ObservableObject {
     init(letter: LettterModel) {
         self.currentLetter = letter
         loadSound(named: letter.sound)
+        audioPlayer?.play() // Start playing sound upon initialization
     }
 
     private func loadSound(named soundName: String) {
@@ -40,4 +35,17 @@ class SoundPlayerViewModel: ObservableObject {
         }
         isMuted.toggle()
     }
+
+    func updateLetter(to newLetter: LettterModel) {
+        self.currentLetter = newLetter
+        loadSound(named: newLetter.sound)
+        if !isMuted {
+            audioPlayer?.play()
+        }
+    }
+
+    deinit {
+        audioPlayer?.stop()
+    }
 }
+

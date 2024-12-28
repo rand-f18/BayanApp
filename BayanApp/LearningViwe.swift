@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct LearningView: View {
+
     let onComplete: () -> Void
     let onBack: () -> Void
     let lightGreen = Color(red: 0.94, green: 0.98, blue: 0.92)
@@ -16,7 +17,7 @@ struct LearningView: View {
         self.onComplete = onComplete
         self.onBack = onBack
     }
-
+   
     var body: some View {
         VStack {
             // Header Section
@@ -35,9 +36,7 @@ struct LearningView: View {
                         )
                         .padding(.leading, 50)
                     
-                    Text("name")
-                        .font(.title)
-                        .fontWeight(.bold)
+                   
                 }
                 Button(action: soundPlayerViewModel.toggleSound) {
                     Image(systemName: soundPlayerViewModel.isMuted ? "speaker.slash.circle" : "speaker.wave.2.circle")
@@ -49,8 +48,8 @@ struct LearningView: View {
                 }
                 .padding(.trailing, 20)
             }
-            .padding(.bottom, 20)
-            .edgesIgnoringSafeArea(.all)
+            .padding(.bottom, 50)
+         
             
             Spacer()
 
@@ -110,6 +109,7 @@ struct LearningView: View {
             Image(letter.animel)
             Spacer()
         }
+      
     }
 }
 
