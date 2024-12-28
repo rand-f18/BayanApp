@@ -1,17 +1,4 @@
-//
-//  File 2.swift
-//  TestLearning
-//
-//  Created by Wafa Awad  on 25/12/2024.
-//
-
-
-     // Header Section
-            
-import Foundation
-
 import SwiftUI
-
 
 struct TrainingView: View {
     let onComplete: () -> Void
@@ -31,7 +18,7 @@ struct TrainingView: View {
     }
 
     var body: some View {
-        VStack {
+        VStack(spacing: 20) {
             // Header Section
             ZStack(alignment: .leading) {
                 lightGreen
@@ -39,53 +26,81 @@ struct TrainingView: View {
                     Image("Boy")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: width, height: height)
+                        .frame(maxWidth: 150, maxHeight: 150)
                         .clipShape(Circle())
-                        .background(
-                            Circle()
-                                .fill(Color.green)
-                                .frame(width: 180, height: 180)
-                        )
-                        .padding(.leading, 50)
-                    
-                    Text("name")
-                        .font(.title)
-                        .fontWeight(.bold)
+                        .background(Circle().fill(Color.green).frame(maxWidth: 180, maxHeight: 180))
+                    Spacer()
                 }
+            }
+            .padding(.bottom, 50)
+
+            // Main Content Container
+            ZStack {
+                RoundedRectangle(cornerRadius: 25)
+                    .foregroundColor(lightGreen)
+                    .frame(maxWidth: 900, maxHeight: 800)
+                    .padding()
+                VStack{
+                    GeometryReader { geometry in
+                        VStack {
+                            Spacer() // Push content downward
+                            
+                            Text(letter.descrTraining)
+                                .font(.title2)
+                                .fontWeight(.medium)
+                                .multilineTextAlignment(.center)
+                                .lineSpacing(6)
+                            
+                                .padding(.horizontal, 20)
+                            
+                            Spacer() // Push content upward
+                        }
+                        .frame(width: geometry.size.width, height: geometry.size.height) // Match container size
+                        
+                    }
+                        Spacer(minLength: 40) // Space between text and buttons
+
+                        // Buttons Below the Text
+                        VStack{ // Adjust spacing between buttons
+                            Button("إكمال المستوى") {
+                                onComplete()
+                            }
+                            .padding()
+                            .frame(width: 200, height: 50)
+                            .background(Color.green)
+                            .foregroundColor(.white)
+                            .cornerRadius(12)
+
+                            Button("عودة") {
+                                onBack()
+                            }
+                            .padding()
+                            .frame(width: 200, height: 50)
+                            .background(Color.gray)
+                            .foregroundColor(.white)
+                            .cornerRadius(12)
+                        }
+                        .padding(.bottom, 10)
+                    // Animal Image aligned to the left
+                    HStack {
+                        Image(letter.animel)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 160, height: 200)
+
+                        Spacer() // Pushes the image to the left
+                    }
+                    .padding(.leading, 10) // Add padding to the left to ensure the image isn't too close to the edge
+                }
+        
                 
-            }
-            .padding(.bottom, 20)
-            .edgesIgnoringSafeArea(.all)
-            
-            Spacer()
-            VStack{
-                Text(letter.descrTraining)
-                    .font(.title)
-                    .fontWeight(.bold)
-                    
-            }
+                }
+                .padding(.bottom, 10)
 
-            // Adjust height if necessary
-            Image(letter.animel)
-            Spacer()
+               
+            }
+             .edgesIgnoringSafeArea(.top)
         }
-        Button("إكمال المستوى") {
-            onComplete()
-        }
-        .padding()
-        .frame(width: 200, height: 60)
-        .background(Color.green)
-        .foregroundColor(.white)
-        .cornerRadius(12)
-
-        Button("عودة") {
-            onBack()
-        }
-        .padding()
-        .frame(width: 200, height: 60)
-        .background(Color.gray)
-        .foregroundColor(.white)
-        .cornerRadius(12)
     }
-}
+
 
