@@ -152,7 +152,7 @@ class ThAudioRecorder: NSObject, AVAudioRecorderDelegate, ObservableObject {
                     print("Comparing '\(cleanedText)' with '\(self.targetLetter)'")
                     
                     // Set isPassed based on whether the target letter is the only recognized character
-                    if cleanedText == self.targetLetter {
+                    if cleanedText.contains(self.targetLetter) {
                         self.feedbackMessage = "نطق صحيح! 🎉" // رسالة عند النطق الصحيح
                         self.isPassed = true // أخضر للنطق الصحيح
                         print("Matched! Background should turn green.")

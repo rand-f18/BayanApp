@@ -146,7 +146,7 @@ class AudioRecorder: NSObject, AVAudioRecorderDelegate, ObservableObject {
                     
                     print("Cleaned recognized text: '\(cleanedText)'") // Debug for cleaned text
                     
-                    if cleanedText == self.targetLetter {
+                    if cleanedText.contains(self.targetLetter) {
                         self.feedbackMessage = "نطق صحيح! 🎉"
                         self.isPassed = true
                     } else {
