@@ -2,34 +2,32 @@ import SwiftUI
 import AVFoundation
 import Speech
 
-struct EvaluationContentView: View {
-    @StateObject private var audioRecorder = AudioRecorder()
+struct KhEvaluationContentView: View {
+    @StateObject private var audioRecorder = KhAudioRecorder()
     
     var body: some View {
         VStack {
             // Title at the very top
-            Text("تقييم")
+            Text("تقييم نطق حرف الخاء")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .padding(.top, -100) // Add top padding to position it nicely
-                .padding(.bottom, 180)
-            
+                .padding(.top, 50)
+                .padding(.bottom, 50)
+
             // Instruction for the user
-            Text("حاول نطق حرف الراء")
-                .font(.system(size: 40))
+            Text("حاول نطق حرف الخاء")
                 .font(.title)
                 .padding()
             
             Text(audioRecorder.feedbackMessage)
-                .font(.system(size: 30))
                 .font(.headline)
                 .padding()
             
-            // Display the target letter in a larger font
-            Text(audioRecorder.targetLetter)
-                .font(.system(size: 300)) // Large font size for visibility
-                .frame(width: 500, height: 500) // Fixed size for the square
-                .background(audioRecorder.isPassed ? Color.green : Color.gray) // Change color based on success
+            // Display the target letter "خ" in a larger font
+            Text("خ")
+                .font(.system(size: 300))
+                .frame(width: 500, height: 500)
+                .background(audioRecorder.isPassed ? Color.green : Color.gray)
                 .cornerRadius(10)
                 .foregroundColor(.white)
                 .animation(.easeInOut(duration: 0.5), value: audioRecorder.isPassed)
@@ -42,23 +40,28 @@ struct EvaluationContentView: View {
                     audioRecorder.startRecording()
                 }
             }) {
-                Image(systemName: "mic.fill") // Mic icon from SF Symbols
+                Image(systemName: "mic.fill")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 75, height: 75) // Size of the icon
-                    .foregroundColor(audioRecorder.isRecording ? Color.red : Color.black) // Change color based on recording state
-                    .padding(.top,100) // Add padding for touch area
+                    .frame(width: 75, height: 75)
+                    .foregroundColor(audioRecorder.isRecording ? Color.red : Color.black)
+                    .padding(.top, 100)
             }
+
+            // User guidance
+            Text("تأكد من نطق حرف الخاء بوضوح.")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
         }
         .padding()
     }
 }
 
-class AudioRecorder: NSObject, AVAudioRecorderDelegate, ObservableObject {
+class KhAudioRecorder: NSObject, AVAudioRecorderDelegate, ObservableObject {
     @Published var feedbackMessage = ""
     @Published var isPassed = false
-    @Published var isRecording = false // Track recording state
-    let targetLetter = "ر"  // The target letter for pronunciation
+    @Published var isRecording = false
+    let targetLetter = "خ"
     private var audioRecorder: AVAudioRecorder?
 
     func startRecording() {
@@ -82,7 +85,7 @@ class AudioRecorder: NSObject, AVAudioRecorderDelegate, ObservableObject {
                 } catch {
                     self.feedbackMessage = "فشل في التسجيل: \(error.localizedDescription)"
                     print("Error recording: \(error)")
-                    self.isRecording = false // Reset state on error
+                    self.isRecording = false
                 }
             } else {
                 self.feedbackMessage = "فشل في إعداد جلسة الصوت."
@@ -137,15 +140,17 @@ class AudioRecorder: NSObject, AVAudioRecorderDelegate, ObservableObject {
                 }
                 
                 let spokenText = result.bestTranscription.formattedString
-                print("Recognized text: \(spokenText)") // Debugging line
+                print("Recognized text: \(spokenText)")
                 
                 DispatchQueue.main.async {
-                    let cleanedText = spokenText.replacingOccurrences(of: "\u{200E}", with: "")
+                    let cleanedText = spokenText
+                        .replacingOccurrences(of: "\u{200E}", with: "")
                         .replacingOccurrences(of: "\u{200F}", with: "")
                         .trimmingCharacters(in: .whitespacesAndNewlines)
                     
-                    print("Cleaned recognized text: '\(cleanedText)'") // Debug for cleaned text
+                    print("Cleaned recognized text: '\(cleanedText)'")
                     
+                    // Check if the cleaned text contains the target letter
                     if cleanedText.contains(self.targetLetter) {
                         self.feedbackMessage = "نطق صحيح! 🎉"
                         self.isPassed = true
@@ -157,7 +162,7 @@ class AudioRecorder: NSObject, AVAudioRecorderDelegate, ObservableObject {
             }
         }
     }
-    
+
     func configureAudioSession(completion: @escaping (Bool) -> Void) {
         let audioSession = AVAudioSession.sharedInstance()
         do {
@@ -177,5 +182,5 @@ class AudioRecorder: NSObject, AVAudioRecorderDelegate, ObservableObject {
 }
 
 #Preview {
-    EvaluationContentView()
+    KhEvaluationContentView()
 }
