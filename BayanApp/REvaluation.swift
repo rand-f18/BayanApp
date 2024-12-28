@@ -4,28 +4,37 @@ import Speech
 
 struct EvaluationContentView: View {
     @StateObject private var audioRecorder = AudioRecorder()
-
+    
     var body: some View {
         VStack {
-            Text("حاول نطق حرف \(audioRecorder.targetLetter)")
+            // Title at the very top
+            Text("تقييم")
                 .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding(.top, -100) // Add top padding to position it nicely
+                .padding(.bottom, 180)
+            
+            // Instruction for the user
+            Text("حاول نطق حرف الراء")
+                .font(.system(size: 40))
+                .font(.title)
                 .padding()
             
             Text(audioRecorder.feedbackMessage)
+                .font(.system(size: 30))
                 .font(.headline)
                 .padding()
             
             // Display the target letter in a larger font
             Text(audioRecorder.targetLetter)
-                .font(.system(size: 150)) // Large font size for visibility
-                .frame(width: 200, height: 200) // Fixed size for the square
-                .background(audioRecorder.isPassed ? Color.green : Color.white) // Change color based on success
+                .font(.system(size: 300)) // Large font size for visibility
+                .frame(width: 500, height: 500) // Fixed size for the square
+                .background(audioRecorder.isPassed ? Color.green : Color.gray) // Change color based on success
                 .cornerRadius(10)
-                .foregroundColor(.gray)
-                .shadow(radius: 19)
+                .foregroundColor(.white)
                 .animation(.easeInOut(duration: 0.5), value: audioRecorder.isPassed)
-            
-            // Record button
+
+            // Mic icon button
             Button(action: {
                 if audioRecorder.isRecording {
                     audioRecorder.stopRecording()
@@ -33,12 +42,12 @@ struct EvaluationContentView: View {
                     audioRecorder.startRecording()
                 }
             }) {
-                Text(audioRecorder.isRecording ? "إيقاف التسجيل" : "بدء التسجيل")
-                    .font(.title)
-                    .padding()
-                    .background(audioRecorder.isRecording ? Color.red : Color.green.opacity(2))
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
+                Image(systemName: "mic.fill") // Mic icon from SF Symbols
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 75, height: 75) // Size of the icon
+                    .foregroundColor(audioRecorder.isRecording ? Color.red : Color.black) // Change color based on recording state
+                    .padding(.top,100) // Add padding for touch area
             }
         }
         .padding()
