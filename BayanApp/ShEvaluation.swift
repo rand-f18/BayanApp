@@ -2,6 +2,14 @@ import SwiftUI
 import AVFoundation
 import Speech
 
+
+
+
+
+
+
+
+
 struct ShEvaluationContentView: View {
     @StateObject private var audioRecorder = ShAudioRecorder()
     
