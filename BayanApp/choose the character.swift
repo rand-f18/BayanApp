@@ -1,103 +1,133 @@
 import SwiftUI
 
 struct CharacterPage: View {
-    let lightGreen = Color(red: 0.94, green: 0.98, blue: 0.92)
+    // Colors and States
+    let lightGreen = Color(red: 0/255, green: 110/255, blue: 127/255 )
+    let redButtonColor = Color.red
     @State private var name: String = ""
+    @State private var selectedCharacter: String? = nil
     @State private var showAlert = false
-    @State private var alertMessage = ""
-    
-    // Use a @State variable to store button data dynamically
-    @State private var buttonData: [(imageName: String, label: String, destination: AnyView?)] = [
-        (imageName: "Character1", label: "boyl", destination: nil),
-        (imageName: "Character2", label: "boy2", destination: nil)
+    @State private var navigateToLettersView = false
+
+    // Dynamic button data
+    let buttonData: [(imageName: String, label: String)] = [
+        (imageName: "Girl", label: "girl1"),
+        (imageName: "happyboy", label: "boy1")
     ]
-    
+
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
-                // Background color and text
-                Color(UIColor.systemBackground)
-                    .edgesIgnoringSafeArea(.all)
-                
-                VStack(spacing: 10) {
+                // Header Texts
+                VStack(spacing: 20) {
                     Text("مرحباً أيها البطل!")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
-                    
-                    Text("اكتب اسمك واختر شخصيتك\nواستعد لاكتشاف عالم مليء بالمرح والتعلم والتحديات")
+                        .padding(.top, 228.509)
+
+                    Text("اختر شخصية طفلك")
                         .font(.headline)
                         .multilineTextAlignment(.center)
                 }
-                .padding(.top, 20)
-                
-                // Name TextField
-                TextField("أدخل اسمك هنا", text: $name)
-                    .padding()
-                    .background(Color(.systemGray6))
-                    .cornerRadius(10)
-                    .padding(.horizontal, 40)
-                
-                // Grid Layout for buttons
-                VStack {
-                    RoundedRectangle(cornerRadius: 25)
-                        .foregroundColor(lightGreen)
-                        .frame(maxWidth: .infinity, maxHeight: 800) // Adjusted frame for better responsiveness
-                        .overlay(
-                            LazyVGrid(
-                                columns: [
-                                    GridItem(.flexible(), spacing: 20),
-                                    GridItem(.flexible(), spacing: 20),
-                                ],
-                                spacing: 20
-                            ) {
-                                ForEach(buttonData, id: \.imageName) { data in
-                                    if let destination = data.destination {
-                                        NavigationLink(destination: destination) {
-                                            VStack {
-                                                Image(data.imageName) // Replace with your actual image asset names
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(width: 200, height: 200)
-                                                    .clipShape(Circle()) // Ensures the button matches the image shape
-                                                    .shadow(radius: 5)
-                                            }
-                                        }
-                                    } else {
-                                        Button(action: {
-                                            // Show alert if no destination
-                                            alertMessage = "هذه الصفحة تحت الإنشاء."
-                                            showAlert = true
-                                        }) {
-                                            VStack {
-                                                Image(data.imageName)
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(width: 200, height: 200)
-                                                    .clipShape(Circle())
-                                                    .shadow(radius: 5)
-                                            }
-                                        }
-                                    }
-                                }
+
+                // Buttons Section
+                VStack(spacing: 10) {
+                    LazyVGrid(
+                        columns: [
+                            GridItem(.flexible(), spacing:-250),
+                            GridItem(.flexible(), spacing: -250)
+                        ],
+                        spacing: 250
+                    ) {
+                        ForEach(buttonData, id: \.imageName) { data in
+                            Button(action: {
+                                selectedCharacter = data.label
+                            }) {
+                                CircleButtonView(
+                                    imageName: data.imageName,
+                                    isSelected: selectedCharacter == data.label
+                                )
                             }
-                        )
+                        }
+                    }
                 }
                 .padding()
-                Spacer() // Ensures content stays at the top, filling the rest of the space
+
                 
-  
+                VStack(spacing: 10) {
+                                Text("أدخل اسم طفلك")
+                                    .font(.headline)
+                                    .multilineTextAlignment(.center)
+                                
+
+                                TextField("أدخل اسم طفلك هنا", text: $name)
+                                    .padding()
+                                    .background(Color(.systemGray6))
+                                    .cornerRadius(20)
+                                    .padding(.horizontal, 156.747)
+                            }
+
+                            Spacer()
+
+                            // Red Button
+                            NavigationLink(
+                                destination: LettersView(name: $name),
+                                isActive: $navigateToLettersView
+                            ) {
+                                Button(action: {
+                                    if name.isEmpty || selectedCharacter == nil {
+                                        showAlert = true
+                                    } else {
+                                        navigateToLettersView = true
+                                    }
+                                }) {
+                                    Text("اكمل")
+                                        .font(.title)
+                                        .foregroundColor(.white)
+                                        .frame(maxWidth: .infinity)
+                                        .padding()
+                                        .background(lightGreen)
+                                        .cornerRadius(10)
+                                        .padding(.horizontal, 40)
+                                }
+                            }
+                        }
+                        .padding(.top, 20) // تعديل المسافة العلوية
+                        .padding(.bottom, 30) // تعديل المسافة السفلية
+                        .alert(isPresented: $showAlert) {
+                            Alert(
+                                title: Text("تنبيه"),
+                                message: Text("يرجى إدخال الاسم واختيار الشخصية."),
+                                dismissButton: .default(Text("حسناً"))
+                            )
+                        }
             }
-            .padding()
-            .alert(isPresented: $showAlert) {
-                Alert(title: Text("تحت الإنشاء"), message: Text(alertMessage), dismissButton: .default(Text("حسناً")))
-            }
-          
-        }
-        .onAppear {
-            // Dynamically update the destination when the view appears
-            buttonData[0].destination = AnyView(LettersView(name: $name))  // Update the destination with the current name binding
         }
     }
-}
 
+
+// Reusable Circle Button Component
+struct CircleButtonView: View {
+    let imageName: String
+    let isSelected: Bool
+
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 20)
+                .fill(isSelected ? Color.yellow.opacity(0.2) : Color(.systemGray6))
+                .frame(width: 150, height: 150)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(isSelected ? Color.yellow : Color.clear, lineWidth: 4)
+                )
+                .shadow(radius: 5)
+
+            Image(imageName)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 100, height: 100)
+        }
+        .animation(.easeInOut, value: isSelected)
+    }
+}

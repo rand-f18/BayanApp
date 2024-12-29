@@ -3,7 +3,7 @@ import SwiftUI
 struct TrainingView: View {
     let onComplete: () -> Void
     let onBack: () -> Void
-    let lightGreen = Color(red: 0.94, green: 0.98, blue: 0.92)
+    let lightGreen = Color(red: 0/255, green: 110/255, blue: 127/255 )
     @State private var width: CGFloat = 150
     @State private var height: CGFloat = 150
     @Binding var letter: LettterModel

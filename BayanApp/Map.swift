@@ -61,6 +61,10 @@ struct MapViewForKLetter: View {
     @State private var isLaunchUnlocked = false // "انطلق" is locked initially
     @ObservedObject var object = LettersViewModel()
     @Binding var letter : LettterModel
+    let customYellow = Color(red: 248/255, green: 203/255, blue: 46/255)
+        let customOrangeRed = Color(red: 238/255, green: 80/255, blue: 7/255)
+        let customDarkRed = Color(red: 178/255, green: 39/255, blue: 39/255)
+
 
     var body: some View {
      
@@ -69,18 +73,18 @@ struct MapViewForKLetter: View {
             case .map:
                 VStack(spacing: 30) {
                     Button(action: { currentView = .learn }) {
-                        LevelButton(label: "تعلم", color: .green, icon: "sparkles")
+                        LevelButton(label: "تعلم", color:  customYellow, icon: "sparkles")
                     }
                     if isTrainUnlocked {
                         Button(action: { currentView = .train }) {
-                            LevelButton(label: "تدرب", color: .blue, icon: "puzzlepiece.fill")
+                            LevelButton(label: "تدرب", color:customOrangeRed , icon: "puzzlepiece.fill")
                         }
                     } else {
                         LockedButton(label: "تدرب", color: .gray)
                     }
                     if isLaunchUnlocked {
                         Button(action: { currentView = .launch }) {
-                            LevelButton(label: "انطلق", color: .orange, icon: "rocket.fill")
+                            LevelButton(label: "انطلق", color: customDarkRed, icon: "rocket.fill")
                         }
                     } else {
                         LockedButton(label: "انطلق", color: .gray)

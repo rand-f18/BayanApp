@@ -1,8 +1,7 @@
 import SwiftUI
 
 struct LettersView: View {
-    let lightGreen = Color(red: 0.94, green: 0.98, blue: 0.92)
-
+    let lightGreen = Color(red: 0/255, green: 110/255, blue: 127/255 )
     @ObservedObject var object = LettersViewModel()
 
     @State private var selectedLetter = LettterModel(
