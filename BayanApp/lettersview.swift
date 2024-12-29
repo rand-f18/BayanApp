@@ -33,16 +33,16 @@ struct LettersView: View {
                 VStack {
                     Text("مرحبًا \(name)، لنبدأ بالتعلم!")
                         .foregroundColor(.black)
-                        .font(.system(size: 40))
-                        
+                        .font(.system(size: UIScreen.main.bounds.width * 0.08)) // Font size relative to screen width
+                        .multilineTextAlignment(.center)
                 }
             }
-            .frame(maxWidth: .infinity, maxHeight: 150)
-            .padding(.bottom, 50)
+            .frame(maxWidth: .infinity, maxHeight: UIScreen.main.bounds.height * 0.2) // 20% of screen height
+            .padding(.bottom, UIScreen.main.bounds.height * 0.05) // 5% of screen height as padding
 
             ScrollView {
                 // Letters grid
-                LazyVGrid(columns: columns) {
+                LazyVGrid(columns: columns, spacing: UIScreen.main.bounds.height * 0.02) { // Spacing between grid items
                     ForEach(object.letters.indices, id: \.self) { index in
                         let letter = object.letters[index]
                         Button(action: {
@@ -50,27 +50,21 @@ struct LettersView: View {
                             navigateToMap = true
                         }) {
                             ZStack {
-                                Image(letter.buttonImage) // Button image
+                                Image(letter.buttonImage)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: 400, height: 300) // Set the size
-                                    .cornerRadius(10) // Optional: Round the corners
-
-                                // Display the letter on the button
-                                Text(letter.letter)
-                                    .font(.system(size: 50))
-                                    .foregroundColor(.black) // Change color as needed
-                                    .bold() // Make the font bold
-                                    .padding(.leading, 100) // Move it to the right
+                                    .frame(
+                                        width: UIScreen.main.bounds.width * 0.4, // 40% of screen width
+                                        height: UIScreen.main.bounds.width * 0.4 // Keep square aspect ratio
+                                    )
+                                    .cornerRadius(10)
                             }
                         }
                         .buttonStyle(PlainButtonStyle()) // Removes default button styling
                     }
                 }
             }
-            .frame(maxHeight: .infinity)
-            .padding(.horizontal)
-            .padding()
+            .padding(.horizontal, UIScreen.main.bounds.width * 0.05) // Horizontal padding relative to screen width
         }
         .navigationDestination(isPresented: $navigateToMap) {
             MapViewForKLetter(letter: $selectedLetter)
@@ -83,10 +77,8 @@ struct LettersView: View {
 
 struct LettersView_Previews: PreviewProvider {
     static var previews: some View {
-        let dummyModel = LettersViewModel() // Ensure this has some data for preview
         let dummyName = "Preview Name"
-        
         LettersView(name: .constant(dummyName))
-            .environmentObject(dummyModel) // Use environment object if needed
     }
 }
+
