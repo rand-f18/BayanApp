@@ -31,8 +31,8 @@ struct LettersView: View {
 
                 VStack {
                     Text("مرحبًا \(name)، لنبدأ بالتعلم!")
-                        .foregroundColor(.black)
-                        .font(.system(size: UIScreen.main.bounds.width * 0.08)) // Font size relative to screen width
+                        .foregroundColor(.white)
+                        .font(.system(size:50)) // Font size relative to screen width
                         .multilineTextAlignment(.center)
                 }
             }
