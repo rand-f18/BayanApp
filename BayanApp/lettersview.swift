@@ -92,24 +92,35 @@ struct LettersView: View {
         .onAppear {
             print(object.letters)
         }
+        .navigationBarBackButtonHidden(true) // Hide default back button
+        .toolbar {
+            // Use the CustomBackButton with onBack action passed here
+            ToolbarItem(placement: .navigationBarLeading) {
+                CustomBackButton(onBack: {
+                    // Define the action to be performed when the custom back button is tapped
+                    // For example, you can pop the current view
+                    navigateToMap = false
+                })
+            }
+        }
     }
 }
 
-// Preview Provider
-struct LettersView_Previews: PreviewProvider {
-    static var previews: some View {
-        // Sample data for preview
-        let dummyName = "علي"
-        let dummyImageName = "Girl" // Replace with a valid image asset name
-
-        // Create a dummy LettersViewModel for the preview
-        let dummyViewModel = LettersViewModel()
-        dummyViewModel.letters = [ // Populate with dummy letter data
-            LettterModel(letter: "أ", animel: "A", sound: "letterA", descLearning: "صوت الألف...", descrTraining: "يقول الألف...", ImageProunounce: "A", buttonImage: "ButtonImage1"),
-            LettterModel(letter: "ب", animel: "B", sound: "letterB", descLearning: "صوت الباء...", descrTraining: "يقول الباء...", ImageProunounce: "B", buttonImage: "ButtonImage2")
-        ]
-
-        return LettersView(name: .constant(dummyName), imageName: .constant(dummyImageName))
-            .environmentObject(dummyViewModel) // Inject the dummy view model
-    }
-}
+//// Preview Provider
+//struct LettersView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        // Sample data for preview
+//        let dummyName = "علي"
+//        let dummyImageName = "Girl" // Replace with a valid image asset name
+//
+//        // Create a dummy LettersViewModel for the preview
+//        let dummyViewModel = LettersViewModel()
+//        dummyViewModel.letters = [ // Populate with dummy letter data
+//            LettterModel(letter: "أ", animel: "A", sound: "letterA", descLearning: "صوت الألف...", descrTraining: "يقول الألف...", ImageProunounce: "A", buttonImage: "ButtonImage1"),
+//            LettterModel(letter: "ب", animel: "B", sound: "letterB", descLearning: "صوت الباء...", descrTraining: "يقول الباء...", ImageProunounce: "B", buttonImage: "ButtonImage2")
+//        ]
+//
+//        return LettersView(name: .constant(dummyName), imageName: .constant(dummyImageName))
+//            .environmentObject(dummyViewModel) // Inject the dummy view model
+//    }
+//}

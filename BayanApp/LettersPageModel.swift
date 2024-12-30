@@ -33,7 +33,7 @@ class LettersViewModel: ObservableObject {
             LettterModel(
                 letter: "ج",
                 animel: "camel",
-                sound: "Kletter",
+                sound: "Gletter",
                 descLearning: "يلتقي وسط اللسان بسقف الحنك التقاء محكماً بحيث ينحبس مجرى الهواء\nوإذا انفصل العضوان انفصالاً بطيئاً يسمع صوت الجيم",
                 descrTraining: "١-يضع الطفل يده اليمنى تحت الذقن للشد على الحنك\n٢-و يضع يده الاخرى على حنجرته وذلك لكي يشعر بالاهتزازات الناتجة عند إخراج الصوت",
                 ImageProunounce: "Gem",
@@ -78,7 +78,7 @@ class LettersViewModel: ObservableObject {
             LettterModel(
                 letter: "غ",
                 animel: "gazelle",
-                sound: "GhLetter",
+                sound: "Ghletter",
                 descLearning: "تخرج الغين من أدنى الحلق مع منطقة الحنك اللحمي\nوقبل اللهاة مباشرة مع أصل اللسان",
                 descrTraining: "١-اطلب من الطفل وضع كمية من الماء في فمه ويطلب منه تحريكها عندة مرات على ان تبقى محجوزة في فمه (يقوم بالغرغره)\n٢-لكي يشعر الطفل بالصوت أيضاً فعليه أن يضع يده على حنجرته أثناء إنتاج الغين",
                 ImageProunounce: "Gen",
@@ -106,7 +106,9 @@ struct CustomBackButton: View {
     let lightGreen = Color(red: 0 / 255, green: 110 / 255, blue: 127 / 255)
 
     var body: some View {
-        Button(action: onBack) {
+        Button(action: {
+            onBack()  // Call the onBack closure
+        }) {
             HStack {
                 Image(systemName: "arrow.left.circle.fill")
                     .font(.title)
@@ -116,9 +118,10 @@ struct CustomBackButton: View {
                     .foregroundColor(lightGreen)
             }
         }
-        .navigationBarBackButtonHidden(true) // Hide the default back button
+        .navigationBarBackButtonHidden(true)  // Hide the default back button
     }
 }
+
 
 
 // MARK: - Custom Button Style
@@ -135,4 +138,5 @@ struct CustomButtonStyle: ButtonStyle {
             .scaleEffect(configuration.isPressed ? 0.95 : 1.0) // Adds a subtle scaling effect when pressed
     }
 }
+
 

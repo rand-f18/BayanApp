@@ -10,7 +10,8 @@ struct LearningView: View {
     @Binding var letter: LettterModel
     @StateObject private var soundPlayerViewModel: SoundPlayerViewModel
     @State private var selectedTab = 0 // Track the current tab
-
+    @Environment(\.dismiss) private var dismiss  // To dismiss the current view
+       
     // Custom initializer
     init(letter: Binding<LettterModel>, onComplete: @escaping () -> Void, onBack: @escaping () -> Void) {
         _letter = letter
@@ -95,11 +96,14 @@ struct LearningView: View {
             }
         }
         .edgesIgnoringSafeArea(.top)
-        .navigationBarBackButtonHidden(true)  // Hide default back button
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                CustomBackButton(onBack: onBack)  // Custom back button
-            }
-        }
+        .navigationBarTitle("Letters", displayMode: .inline)  // Optional: Set the title for the navigation bar
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        CustomBackButton(onBack: {
+                            onBack()  // Call the passed closure first
+                            dismiss()  // Dismiss the current view (go back)
+                        })
+                    }
+                }
     }
 }
