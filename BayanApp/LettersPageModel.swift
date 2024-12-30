@@ -24,7 +24,7 @@ class LettersViewModel: ObservableObject {
             LettterModel(
                 letter: "ث",
                 animel: "fox",
-                sound: "letter",
+                sound: "ThLetter",
                 descLearning: "يخرج صوت الثاء بتقارب طرف اللسان مع الأسنان العلوية والسفلية\nويلاحظ تقدم طرف اللسان نسبة إلى الفم أكثر من الذال والظاء",
                 descrTraining: "١-يضع الطففل طرف اللسان بين الأسنان الأمامية والسفلية\nثم يضع يده أمام فمه ليشعر باستمرارية الهواء الخارج من فمه ",
                 ImageProunounce: "Th",
