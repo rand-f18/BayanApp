@@ -119,22 +119,42 @@ struct MapViewForKLetter: View {
         }
         .padding()
     }
-    
-    private func determineLaunchDestination(for letter: LettterModel) -> some View {
-    switch letter.letter {
-           case "ر":
-               return AnyView(EvaluationContentView())
-           case "س":
-               return AnyView(SinEvaluationContentView())
-           case "ج":
-               return AnyView(GEvaluationContentView())
-           case "ث":
-               return AnyView(ThEvaluationContentView())
-           default:
-               return AnyView(Text("Invalid letter selected for Launch."))
-           }
-       }
-
+//<<<<<<< HEAD
+//    
+//    private func determineLaunchDestination(for letter: LettterModel) -> some View {
+//    switch letter.letter {
+//           case "ر":
+//               return AnyView(EvaluationContentView())
+//           case "س":
+//               return AnyView(SinEvaluationContentView())
+//           case "ج":
+//               return AnyView(GEvaluationContentView())
+//           case "ث":
+//               return AnyView(ThEvaluationContentView())
+//           default:
+//               return AnyView(Text("Invalid letter selected for Launch."))
+//           }
+//       }
+//
+//=======
+    @ViewBuilder
+        private func determineLaunchDestination(for letter: LettterModel) -> some View {
+            switch letter.letter {
+            case "ر":
+                EvaluationContentView()
+            case "س":
+                SinEvaluationContentView()
+            case "ج":
+                GEvaluationContentView()
+            case"ث":
+                ThEvaluationContentView()
+                
+                
+            default:
+                Text("Invalid letter selected for Launch.")
+            }
+        }
+//>>>>>>> main
     // Define view types for navigation
     enum ViewType {
         case map

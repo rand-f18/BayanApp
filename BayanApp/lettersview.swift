@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct LettersView: View {
-    let lightGreen = Color(red: 0/255, green: 110/255, blue: 127/255 )
+    let lightGreen = Color(red: 0/255, green: 110/255, blue: 127/255)
     @ObservedObject var object = LettersViewModel()
 
     @State private var selectedLetter = LettterModel(
@@ -26,38 +26,38 @@ struct LettersView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-                    ZStack {
-                        lightGreen
-                            .ignoresSafeArea()
+            ZStack {
+                lightGreen
+                    .ignoresSafeArea()
+                    .padding(.bottom,UIScreen.main.bounds.width * 0.05)
 
-                        HStack {  // Use HStack to align text and image
-                            VStack(alignment: .leading) {
-                                Text("مرحبًا \(name)، لنبدأ بالتعلم!")
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 40))
-                                    .multilineTextAlignment(.leading)
-                            }
-                            .padding()
-
-                            .padding(.leading,150) // Add space between text and image
-
-                            // Displaying the image from imageName with circular background
-                            ZStack {
-                                Circle()
-                                    .fill(Color.white)  // Background circle color
-                                    .frame(width: 120, height: 120)  // Circle size
-
-                                Image(imageName)  // Use the image name to create an Image view
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 100, height: 100)  // Adjust the image size
-                                    .clipShape(Circle())  // Make the image circular
-                            }
-                            .padding(.leading,70)
-                        }
+                HStack {  // Use HStack to align text and image
+                    VStack(alignment: .leading) {
+                        Text("مرحبًا \(name)، لنبدأ بالتعلم!")
+                            .foregroundColor(.white)
+                            .font(.system(size: UIScreen.main.bounds.width * 0.05)) // Responsive font size
+                            .multilineTextAlignment(.leading)
                     }
-                    .frame(maxWidth: .infinity, maxHeight: 220)
-                    .padding(.bottom, UIScreen.main.bounds.height * 0.04)
+                    .padding(.leading)
+
+                    // Displaying the image from imageName with circular background
+                    ZStack {
+                        Circle()
+                            .fill(Color.white)  // Background circle color
+                            .frame(width: UIScreen.main.bounds.width * 0.17, height: UIScreen.main.bounds.width * 0.17)  // Circle size
+
+                        Image(imageName)  // Use the image name to create an Image view
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: UIScreen.main.bounds.width * 0.15, height: UIScreen.main.bounds.width * 0.15)  // Adjust the image size
+                            .clipShape(Circle())  // Make the image circular
+                    }
+                    .padding(.leading, 20) // Adjust spacing between text and image
+                    
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: UIScreen.main.bounds.height * 0.3) // Responsive frame height
+            
 
             ScrollView {
                 // Letters grid
@@ -73,8 +73,8 @@ struct LettersView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(
-                                        width: 320, // 40% of screen width
-                                        height: 320// Keep square aspect ratio
+                                        width: UIScreen.main.bounds.width * 0.5, // 40% of screen width
+                                        height: UIScreen.main.bounds.width * 0.5 // Keep square aspect ratio
                                     )
                                     .cornerRadius(10)
                             }
@@ -84,6 +84,7 @@ struct LettersView: View {
                 }
             }
             .padding(.horizontal, UIScreen.main.bounds.width * 0.05) // Horizontal padding relative to screen width
+            
         }
         .navigationDestination(isPresented: $navigateToMap) {
             MapViewForKLetter(letter: $selectedLetter)
@@ -112,4 +113,3 @@ struct LettersView_Previews: PreviewProvider {
             .environmentObject(dummyViewModel) // Inject the dummy view model
     }
 }
-
