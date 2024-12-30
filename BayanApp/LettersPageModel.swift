@@ -42,7 +42,7 @@ class LettersViewModel: ObservableObject {
             LettterModel(
                 letter: "خ",
                 animel: "sheep",
-                sound: "Kletter",
+                sound: "KhLetter",
                 descLearning: "يقع مخرج صوت الخاء أدنى الحلق عند منطقة جذر اللسان\nمع سقف الحلق الرخو",
                 descrTraining: "يضع الطفل يده على رقبته ليشعر بالاهتزازات الصادرة نتيجة إنتاج الصوت ",
                 ImageProunounce: "Kh",
@@ -69,7 +69,7 @@ class LettersViewModel: ObservableObject {
             LettterModel(
                 letter: "ش",
                 animel: "lion",
-                sound: "Kletter",
+                sound: "ShLetter",
                 descLearning: "يتكون صوت الشين بالتصاق طرف ووسط اللسان بالجزء العلوي الأمامي\nويصدر الصوت بشكل مشوشاً",
                 descrTraining: "١- يضع الطفل يده أمام فمه لكي يحس بالهواء الساخن عن إنتاج الصوت\n٢-يجب ملاحظة وضع الفم بحيث يكون مضموماً قليلاً عند إنتاج الصوت أكثر من صوت السين (استخدم المرآة لملاحظة ذلك)",
                 ImageProunounce: "Sh",
@@ -78,7 +78,7 @@ class LettersViewModel: ObservableObject {
             LettterModel(
                 letter: "غ",
                 animel: "gazelle",
-                sound: "Gletter",
+                sound: "GhLetter",
                 descLearning: "تخرج الغين من أدنى الحلق مع منطقة الحنك اللحمي\nوقبل اللهاة مباشرة مع أصل اللسان",
                 descrTraining: "١-اطلب من الطفل وضع كمية من الماء في فمه ويطلب منه تحريكها عندة مرات على ان تبقى محجوزة في فمه (يقوم بالغرغره)\n٢-لكي يشعر الطفل بالصوت أيضاً فعليه أن يضع يده على حنجرته أثناء إنتاج الغين",
                 ImageProunounce: "Gh",
