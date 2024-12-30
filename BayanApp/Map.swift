@@ -128,7 +128,8 @@ struct MapViewForKLetter: View {
             case "ج":
                 GEvaluationContentView()
             case"ث":
-            ThEvaluationContentView()
+                ThEvaluationContentView()
+                
                 
             default:
                 Text("Invalid letter selected for Launch.")
