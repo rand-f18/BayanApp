@@ -8,6 +8,7 @@ struct CharacterPage: View {
     @State private var selectedCharacter: String? = nil
     @State private var showAlert = false
     @State private var navigateToLettersView = false
+    @State private var selectedImageName: String = ""
 
     // Dynamic button data
     let buttonData: [(imageName: String, label: String)] = [
@@ -43,6 +44,7 @@ struct CharacterPage: View {
                         ForEach(buttonData, id: \.imageName) { data in
                             Button(action: {
                                 selectedCharacter = data.label
+                                selectedImageName = data.imageName
                             }) {
                                 CircleButtonView(
                                     imageName: data.imageName,
@@ -71,17 +73,17 @@ struct CharacterPage: View {
                             Spacer()
 
                             // Red Button
-                            NavigationLink(
-                                destination: LettersView(name: $name),
-                                isActive: $navigateToLettersView
-                            ) {
-                                Button(action: {
-                                    if name.isEmpty || selectedCharacter == nil {
-                                        showAlert = true
-                                    } else {
-                                        navigateToLettersView = true
-                                    }
-                                }) {
+                NavigationLink(
+                                    destination: LettersView(name: $name, imageName: $selectedImageName),  // Pass the binding
+                                    isActive: $navigateToLettersView
+                                ) {
+                                    Button(action: {
+                                        if name.isEmpty || selectedCharacter == nil {
+                                            showAlert = true
+                                        } else {
+                                            navigateToLettersView = true
+                                        }
+                                    }) {
                                     Text("اكمل")
                                         .font(.title)
                                         .foregroundColor(.white)

@@ -15,6 +15,8 @@ struct LettersView: View {
     )
 
     @Binding var name: String
+    @Binding var imageName: String
+    
     @State private var navigateToMap = false
 
     let columns = [
@@ -24,20 +26,38 @@ struct LettersView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            // Full-height section with green background
-            ZStack {
-                lightGreen
-                    .ignoresSafeArea()
+                    ZStack {
+                        lightGreen
+                            .ignoresSafeArea()
 
-                VStack {
-                    Text("مرحبًا \(name)، لنبدأ بالتعلم!")
-                        .foregroundColor(.white)
-                        .font(.system(size:40)) // Font size relative to screen width
-                        .multilineTextAlignment(.center)
-                }
-            }
-            .frame(maxWidth: .infinity, maxHeight: 220) // 20% of screen height
-            .padding(.bottom, UIScreen.main.bounds.height * 0.04) // 5% of screen height as padding
+                        HStack {  // Use HStack to align text and image
+                            VStack(alignment: .leading) {
+                                Text("مرحبًا \(name)، لنبدأ بالتعلم!")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 40))
+                                    .multilineTextAlignment(.leading)
+                            }
+                            .padding()
+
+                            .padding(.leading,150) // Add space between text and image
+
+                            // Displaying the image from imageName with circular background
+                            ZStack {
+                                Circle()
+                                    .fill(Color.white)  // Background circle color
+                                    .frame(width: 120, height: 120)  // Circle size
+
+                                Image(imageName)  // Use the image name to create an Image view
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 100, height: 100)  // Adjust the image size
+                                    .clipShape(Circle())  // Make the image circular
+                            }
+                            .padding(.leading,70)
+                        }
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: 220)
+                    .padding(.bottom, UIScreen.main.bounds.height * 0.04)
 
             ScrollView {
                 // Letters grid
@@ -74,10 +94,22 @@ struct LettersView: View {
     }
 }
 
+// Preview Provider
 struct LettersView_Previews: PreviewProvider {
     static var previews: some View {
-        let dummyName = "Preview Name"
-        LettersView(name: .constant(dummyName))
+        // Sample data for preview
+        let dummyName = "علي"
+        let dummyImageName = "Girl" // Replace with a valid image asset name
+
+        // Create a dummy LettersViewModel for the preview
+        let dummyViewModel = LettersViewModel()
+        dummyViewModel.letters = [ // Populate with dummy letter data
+            LettterModel(letter: "أ", animel: "A", sound: "letterA", descLearning: "صوت الألف...", descrTraining: "يقول الألف...", ImageProunounce: "A", buttonImage: "ButtonImage1"),
+            LettterModel(letter: "ب", animel: "B", sound: "letterB", descLearning: "صوت الباء...", descrTraining: "يقول الباء...", ImageProunounce: "B", buttonImage: "ButtonImage2")
+        ]
+
+        return LettersView(name: .constant(dummyName), imageName: .constant(dummyImageName))
+            .environmentObject(dummyViewModel) // Inject the dummy view model
     }
 }
 
