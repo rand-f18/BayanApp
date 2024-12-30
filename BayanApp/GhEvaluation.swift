@@ -25,13 +25,17 @@ struct GhEvaluationContentView: View {
 //                .padding()
             
             // Display the target letter "غ" in a larger font
-            Text("غ")
-                .font(.system(size: 300))
-                .frame(width: 500, height: 500)
-                .background(audioRecorder.isPassed ? Color.green : Color.gray)
-                .cornerRadius(10)
-                .foregroundColor(.white)
-                .animation(.easeInOut(duration: 0.5), value: audioRecorder.isPassed)
+            Image("Ghevaluation")
+                .resizable()
+                .scaledToFit() // Scales the image while maintaining aspect ratio
+                .frame(
+                    maxWidth: 600, // Maximum width for the image
+                        maxHeight: 550 // Maximum height for the image
+                                )
+                        
+                                .padding()
+                                .animation(.easeInOut(duration: 0.5), value: audioRecorder.isPassed)
+
 
             // Mic icon button
             Button(action: {
@@ -53,8 +57,12 @@ struct GhEvaluationContentView: View {
             Text("تأكد من نطق حرف الغين بوضوح.")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
+                .multilineTextAlignment(.center)
+                .padding(.bottom, 20)
         }
         .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(UIColor.systemBackground))
     }
 }
 
