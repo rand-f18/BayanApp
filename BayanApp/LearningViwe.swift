@@ -1,12 +1,15 @@
+
 import SwiftUI
 
 struct LearningView: View {
-
+    // MARK: - Properties
     let onComplete: () -> Void
     let onBack: () -> Void
-    let lightGreen = Color(red: 0/255, green: 110/255, blue: 127/255 )
+    let lightGreen = Color(red: 0 / 255, green: 110 / 255, blue: 127 / 255)
+
     @Binding var letter: LettterModel
     @StateObject private var soundPlayerViewModel: SoundPlayerViewModel
+    @State private var selectedTab = 0 // Track the current tab
 
     // Custom initializer
     init(letter: Binding<LettterModel>, onComplete: @escaping () -> Void, onBack: @escaping () -> Void) {
@@ -18,119 +21,85 @@ struct LearningView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            // Header Section with Boy Image
-            ZStack(alignment: .leading) {
-                lightGreen
-                HStack(spacing: 20) {
-                    Image("Boy")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: 150, maxHeight: 150)
-                        .clipShape(Circle())
-                        .background(Circle().fill(Color.green).frame(maxWidth: 180, maxHeight: 180))
-                    Spacer()
-                }
-            }
-            .padding(.bottom, 50)
-
-            // Main Content Container
             ZStack {
+                // Background container
                 RoundedRectangle(cornerRadius: 25)
-                    .foregroundColor(lightGreen)
-                    .frame(maxWidth: 900, maxHeight: 800)
+                    .foregroundColor(.secondary.opacity(0.1))
                     .padding()
 
-                VStack {
-                    // TabView for swipeable content
-                    TabView {
-                        // First Page: Letter and Sound Button
-                        GeometryReader { geometry in
-                            VStack {
+                VStack(spacing: 20) {
+                    // MARK: TabView Section
+                    TabView(selection: $selectedTab) {
+                        // Page 1: Letter and Sound Button
+                        VStack(spacing: 20) {
+                            HStack{
+                                Spacer()
                                 Button(action: soundPlayerViewModel.toggleSound) {
                                     Image(systemName: soundPlayerViewModel.isMuted ? "speaker.slash.circle" : "speaker.wave.2.circle")
-                                        .font(.system(size: 40))
+                                        .font(.system(size: 30))
                                         .padding()
                                         .background(Circle().fill(Color.white.opacity(0.8)))
-                                        .foregroundColor(.green.opacity(0.6))
+                                        .foregroundColor(lightGreen)
                                         .shadow(radius: 5)
                                 }
-                                .padding(.leading, 500)
-
-                                Text(letter.letter)
-                                    .font(.system(size: 120))
-                                    .foregroundColor(.green)
-                                    .padding()
-                                    .frame(width: 160, height: 160)
-                                    .background(Color.white)
-                                    .clipShape(Circle())
-                                    .shadow(radius: 5)
+                                
                             }
-                            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center) // Center the content both vertically and horizontally
+                            Image(letter.buttonImage)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(
+                                    width: UIScreen.main.bounds.width * 0.9,
+                                    height: UIScreen.main.bounds.width * 0.9
+                                )
+                                .cornerRadius(10)
                         }
                         .tag(0)
-
-                        // Second Page: Image and Description (Center the content)
-                        GeometryReader { geometry in
-                            VStack {
-                                Image(letter.ImageProunounce) // Image centered
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 200, height: 200)
-
-                                Text(letter.descLearning)
-                                    .font(.headline)
-                                    .padding()
-                                    .multilineTextAlignment(.center)
-                                    .lineLimit(nil) // Ensures the text wraps properly without truncation
-                                                                      
-                            }
-                            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center) // Center the content both vertically and horizontally
+                        
+                        // Page 2: Pronunciation Image and Description
+                        VStack(spacing: 20) {
+                            Image(letter.ImageProunounce)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(maxWidth: 200, maxHeight: 200)
+                            
+                            Text(letter.descLearning)
+                                .font(.headline)
+                                .padding()
+                                .multilineTextAlignment(.center)
                         }
                         .tag(1)
                     }
-                    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-                    .frame(maxHeight: 800) // Adjust this height for better space usage
-
-                    .padding(.bottom, 40) // Add padding below TabView to create space
-
-                    Spacer(minLength: 40) // Space between text and buttons              // Buttons Below the TabView
-                    // Buttons Below the TabView
-                    VStack {
+                    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never)) // Hide the default dots indicator
+                    
+                    // Custom page indicator (dots)
+                    HStack {
+                        ForEach(0..<2, id: \.self) { index in
+                            Circle()
+                                .fill(index == selectedTab ? lightGreen : Color.gray)
+                                .frame(width: 10, height: 10)
+                                .padding(5)
+                        }
+                    }
+                    
+                    Spacer(minLength: 20)
+                    
+                    // Buttons Section
+                    HStack(spacing: 20) {
                         Button("إكمال المستوى") {
                             onComplete()
                         }
-                        .padding()
-                        .frame(width: 200, height: 30)
-                        .background(Color.green)
-                        .foregroundColor(.white)
-                        .cornerRadius(12)
-
-                        Button("عودة") {
-                            onBack()
-                        }
-                        .padding()
-                        .frame(width: 200, height: 30)
-                        .background(Color.gray)
-                        .foregroundColor(.white)
-                        .cornerRadius(12)
+                        .buttonStyle(CustomButtonStyle(backgroundColor: lightGreen))
                     }
-                    .padding(.bottom, 10)
-
-                    // Animal Image aligned to the left
-                    HStack {
-                        Image(letter.animel)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 160, height: 200)
-
-                        Spacer() // Pushes the image to the left
-                    }
-                    .padding(.leading, 10) // Add padding to the left to ensure the image isn't too close to the edge
                 }
                 .padding()
             }
         }
         .edgesIgnoringSafeArea(.top)
+        .navigationBarBackButtonHidden(true)  // Hide default back button
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                CustomBackButton(onBack: onBack)  // Custom back button
+            }
+        }
     }
 }
-

@@ -9,7 +9,6 @@ class SoundPlayerViewModel: ObservableObject {
     init(letter: LettterModel) {
         self.currentLetter = letter
         loadSound(named: letter.sound)
-        audioPlayer?.play() // Start playing sound upon initialization
     }
 
     private func loadSound(named soundName: String) {
@@ -22,6 +21,7 @@ class SoundPlayerViewModel: ObservableObject {
             audioPlayer = try AVAudioPlayer(data: soundData)
             audioPlayer?.numberOfLoops = -1 // Loop indefinitely
             audioPlayer?.prepareToPlay()
+            audioPlayer?.play() // Start playing sound immediately after loading
         } catch {
             print("Error loading or playing sound: \(error)")
         }
@@ -29,9 +29,9 @@ class SoundPlayerViewModel: ObservableObject {
 
     func toggleSound() {
         if isMuted {
-            audioPlayer?.play()
+            audioPlayer?.play() // Play if muted
         } else {
-            audioPlayer?.pause()
+            audioPlayer?.pause() // Pause if playing
         }
         isMuted.toggle()
     }

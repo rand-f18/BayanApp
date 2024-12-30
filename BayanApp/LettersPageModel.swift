@@ -96,4 +96,43 @@ class LettersViewModel: ObservableObject {
         ]
     }
 }
+////import SwiftUI
+
+// MARK: - Custom Back Button View
+import SwiftUI
+
+struct CustomBackButton: View {
+    let onBack: () -> Void
+    let lightGreen = Color(red: 0 / 255, green: 110 / 255, blue: 127 / 255)
+
+    var body: some View {
+        Button(action: onBack) {
+            HStack {
+                Image(systemName: "arrow.left.circle.fill")
+                    .font(.title)
+                    .foregroundColor(lightGreen)
+                Text("Back")
+                    .font(.headline)
+                    .foregroundColor(lightGreen)
+            }
+        }
+        .navigationBarBackButtonHidden(true) // Hide the default back button
+    }
+}
+
+
+// MARK: - Custom Button Style
+struct CustomButtonStyle: ButtonStyle {
+    var backgroundColor: Color
+
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .frame(maxWidth: .infinity, minHeight: 50)
+            .background(backgroundColor)
+            .foregroundColor(.white)
+            .cornerRadius(12)
+            .scaleEffect(configuration.isPressed ? 0.95 : 1.0) // Adds a subtle scaling effect when pressed
+    }
+}
 
