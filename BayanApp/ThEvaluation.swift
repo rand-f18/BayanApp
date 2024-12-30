@@ -21,9 +21,12 @@ struct ThEvaluationContentView: View {
                 .multilineTextAlignment(.center)
                 .padding()
             
-            Text(audioRecorder.feedbackMessage)
-                .font(.headline)
-                .padding()
+            // Feedback message
+            if !audioRecorder.feedbackMessage.isEmpty {
+                Text(audioRecorder.feedbackMessage)
+                    .font(.headline)
+                    .padding()
+            }
             
             Image("THevaluation")
                 .resizable()
@@ -49,7 +52,7 @@ struct ThEvaluationContentView: View {
                     .scaledToFit()
                     .frame(width: 75, height: 75)
                     .foregroundColor(audioRecorder.isRecording ? Color.red : Color.black)
-                    .padding(.top, 100)
+                    .padding(.bottom, 20)
             }
 
             // User guidance

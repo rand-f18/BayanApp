@@ -20,9 +20,13 @@ struct GhEvaluationContentView: View {
                 .font(.title)
                 .multilineTextAlignment(.center)
                 .padding()
-//            Text(audioRecorder.feedbackMessage)
-//                .font(.headline)
-//                .padding()
+
+            // Feedback message
+            if !audioRecorder.feedbackMessage.isEmpty {
+                Text(audioRecorder.feedbackMessage)
+                    .font(.headline)
+                    .padding()
+            }
             
             // Display the target letter "غ" in a larger font
             Image("Ghevaluation")
@@ -50,7 +54,8 @@ struct GhEvaluationContentView: View {
                     .scaledToFit()
                     .frame(width: 75, height: 75)
                     .foregroundColor(audioRecorder.isRecording ? Color.red : Color.black)
-                    .padding(.top, 100)
+                    .padding(.bottom, 20)
+
             }
 
             // User guidance

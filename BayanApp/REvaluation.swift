@@ -52,7 +52,8 @@ struct EvaluationContentView: View {
                     .scaledToFit()
                     .frame(width: 75, height: 75)
                     .foregroundColor(audioRecorder.isRecording ? .red : .black)
-                    .padding(.top, 20)
+                    .padding(.bottom, 20)
+
             }
 
             // Additional instruction
