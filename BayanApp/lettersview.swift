@@ -31,13 +31,13 @@ struct LettersView: View {
 
                 VStack {
                     Text("مرحبًا \(name)، لنبدأ بالتعلم!")
-                        .foregroundColor(.black)
-                        .font(.system(size: UIScreen.main.bounds.width * 0.08)) // Font size relative to screen width
+                        .foregroundColor(.white)
+                        .font(.system(size:40)) // Font size relative to screen width
                         .multilineTextAlignment(.center)
                 }
             }
-            .frame(maxWidth: .infinity, maxHeight: UIScreen.main.bounds.height * 0.2) // 20% of screen height
-            .padding(.bottom, UIScreen.main.bounds.height * 0.05) // 5% of screen height as padding
+            .frame(maxWidth: .infinity, maxHeight: 220) // 20% of screen height
+            .padding(.bottom, UIScreen.main.bounds.height * 0.04) // 5% of screen height as padding
 
             ScrollView {
                 // Letters grid
@@ -53,8 +53,8 @@ struct LettersView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(
-                                        width: UIScreen.main.bounds.width * 0.4, // 40% of screen width
-                                        height: UIScreen.main.bounds.width * 0.4 // Keep square aspect ratio
+                                        width: 320, // 40% of screen width
+                                        height: 320// Keep square aspect ratio
                                     )
                                     .cornerRadius(10)
                             }
