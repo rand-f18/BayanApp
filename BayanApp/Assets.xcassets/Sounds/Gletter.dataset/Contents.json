@@ -1,8 +1,9 @@
 {
   "data" : [
     {
-      "filename" : "Gletter.mp3",
-      "idiom" : "universal"
+      "filename" : "نطق حرف الجيم.mp3",
+      "idiom" : "universal",
+      "universal-type-identifier" : "public.mp3"
     }
   ],
   "info" : {
