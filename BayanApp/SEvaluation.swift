@@ -2,67 +2,74 @@ import SwiftUI
 import AVFoundation
 import Speech
 
+import SwiftUI
+
 struct SinEvaluationContentView: View {
     @StateObject private var audioRecorder = SinAudioRecorder()
     let lightGreen = Color(red: 0 / 255, green: 110 / 255, blue: 127 / 255)
+
     var body: some View {
-           VStack(spacing: 20) {
-               // Title at the top
-               Text("تقييم نطق حرف السين")
-                   .font(.largeTitle)
-                   .foregroundColor(lightGreen) // Static coloring for the title
-                   .fontWeight(.bold)
-                   .padding(.top, 20)
+        VStack(spacing: 20) {
+            // Title at the top
+            Text("تقييم نطق حرف السين")
+                .font(.largeTitle)
+                .foregroundColor(lightGreen)
+                .fontWeight(.bold)
+                .padding(.top, 20)
 
-               // Instruction for the user
-               Text("حاول نطق حرف السين")
-                   .font(.title)
-                   .multilineTextAlignment(.center)
-                   
-                   .padding()
+            // Instruction for the user
+            Text("حاول نطق حرف السين")
+                .font(.title)
+                .multilineTextAlignment(.center)
+                .padding()
 
-               // Feedback message
-               Text(audioRecorder.feedbackMessage)
-                   .font(.headline)
-                   .padding()
+            // Feedback message
+            if !audioRecorder.feedbackMessage.isEmpty {
+                Text(audioRecorder.feedbackMessage)
+                    .font(.headline)
+                    .padding()
+            }
 
-               // Dynamic image
-               Image("Seevaulation")
-                   .resizable()
-//                   .scaledToFit() // Scales the image while maintaining aspect ratio
-                   .frame(maxWidth: .infinity, maxHeight: .infinity) // Adjusts to available space
-                   .background(audioRecorder.isPassed ? Color.green.opacity(0.01) : Color.gray.opacity(0.01))
-                   .cornerRadius(10)
-                   .padding()
-                   .animation(.easeInOut(duration: 0.5), value: audioRecorder.isPassed)
+            // Dynamic image
+            Image("Seevaulation")
+                .resizable()
+                .scaledToFit() // Scales the image while maintaining aspect ratio
+                .frame(
+                    maxWidth: 600, // Maximum width for the image
+                        maxHeight: 550 // Maximum height for the image
+                                )
+                        
+                                .padding()
+                                .animation(.easeInOut(duration: 0.5), value: audioRecorder.isPassed)
 
-               // Mic button
-               Button(action: {
-                   if audioRecorder.isRecording {
-                       audioRecorder.stopRecording()
-                   } else {
-                       audioRecorder.startRecording()
-                   }
-               }) {
-                   Image(systemName: "mic.fill")
-                       .resizable()
-                       .scaledToFit()
-                       .frame(width: 75, height: 75)
-                       .foregroundColor(audioRecorder.isRecording ? Color.red : Color.black)
-                       .padding(.top, 20)
-               }
 
-               // Additional instruction
-               Text("تأكد من نطق حرف السين بوضوح.")
-                   .font(.subheadline)
-                   .foregroundColor(.secondary)
-                   .multilineTextAlignment(.center)
-                   .padding(.bottom, 20)
-           }
-           .padding()
-           .frame(maxWidth: .infinity, maxHeight: .infinity) // Makes the whole view fill the parent container
-           .background(Color(UIColor.systemBackground)) // Adapts to light/dark mode
-       }
+            // Mic button
+            Button(action: {
+                if audioRecorder.isRecording {
+                    audioRecorder.stopRecording()
+                } else {
+                    audioRecorder.startRecording()
+                }
+            }) {
+                Image(systemName: "mic.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 75, height: 75)
+                    .foregroundColor(audioRecorder.isRecording ? .red : .black)
+                    .padding(.top, 20)
+            }
+
+            // Additional instruction
+            Text("تأكد من نطق حرف السين بوضوح.")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+                .multilineTextAlignment(.center)
+                .padding(.bottom, 20)
+        }
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(UIColor.systemBackground))
+    }
 }
 
 class SinAudioRecorder: NSObject, AVAudioRecorderDelegate, ObservableObject {

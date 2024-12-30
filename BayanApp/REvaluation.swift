@@ -4,37 +4,42 @@ import Speech
 
 struct EvaluationContentView: View {
     @StateObject private var audioRecorder = AudioRecorder()
-    
+    let lightGreen = Color(red: 0 / 255, green: 110 / 255, blue: 127 / 255)
     var body: some View {
         VStack {
-            // Title at the very top
-            Text("تقييم")
+            // Title at the top
+            Text("تقييم نطق حرف الراء")
                 .font(.largeTitle)
+                .foregroundColor(lightGreen)
                 .fontWeight(.bold)
-                .padding(.top, -100) // Add top padding to position it nicely
-                .padding(.bottom, 180)
-            
+                .padding(.top, 20)
+
             // Instruction for the user
             Text("حاول نطق حرف الراء")
-                .font(.system(size: 40))
                 .font(.title)
+                .multilineTextAlignment(.center)
                 .padding()
-            
-            Text(audioRecorder.feedbackMessage)
-                .font(.system(size: 30))
-                .font(.headline)
-                .padding()
+
+            // Feedback message
+            if !audioRecorder.feedbackMessage.isEmpty {
+                Text(audioRecorder.feedbackMessage)
+                    .font(.headline)
+                    .padding()
+            }
             
             // Display the target letter in a larger font
-            Text(audioRecorder.targetLetter)
-                .font(.system(size: 300)) // Large font size for visibility
-                .frame(width: 500, height: 500) // Fixed size for the square
-                .background(audioRecorder.isPassed ? Color.green : Color.gray) // Change color based on success
-                .cornerRadius(10)
-                .foregroundColor(.white)
-                .animation(.easeInOut(duration: 0.5), value: audioRecorder.isPassed)
+            Image("Reevaluation")
+                .resizable()
+                .scaledToFit() // Scales the image while maintaining aspect ratio
+                .frame(
+                    maxWidth: 600, // Maximum width for the image
+                        maxHeight: 550 // Maximum height for the image
+                                )
+                
+                                .padding()
+                                .animation(.easeInOut(duration: 0.5), value: audioRecorder.isPassed)
 
-            // Mic icon button
+            // Mic button
             Button(action: {
                 if audioRecorder.isRecording {
                     audioRecorder.stopRecording()
@@ -42,17 +47,27 @@ struct EvaluationContentView: View {
                     audioRecorder.startRecording()
                 }
             }) {
-                Image(systemName: "mic.fill") // Mic icon from SF Symbols
+                Image(systemName: "mic.fill")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 75, height: 75) // Size of the icon
-                    .foregroundColor(audioRecorder.isRecording ? Color.red : Color.black) // Change color based on recording state
-                    .padding(.top,100) // Add padding for touch area
+                    .frame(width: 75, height: 75)
+                    .foregroundColor(audioRecorder.isRecording ? .red : .black)
+                    .padding(.top, 20)
             }
+
+            // Additional instruction
+            Text("تأكد من نطق حرف الراء بوضوح.")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+                .multilineTextAlignment(.center)
+                .padding(.bottom, 20)
         }
         .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(UIColor.systemBackground))
     }
 }
+
 
 class AudioRecorder: NSObject, AVAudioRecorderDelegate, ObservableObject {
     @Published var feedbackMessage = ""

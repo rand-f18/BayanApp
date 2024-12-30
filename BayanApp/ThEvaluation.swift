@@ -4,33 +4,37 @@ import Speech
 
 struct ThEvaluationContentView: View {
     @StateObject private var audioRecorder = ThAudioRecorder()
-    
+    let lightGreen = Color(red: 0 / 255, green: 110 / 255, blue: 127 / 255)
+
     var body: some View {
-        VStack {
+        VStack (spacing: 20){
             // Title at the very top
             Text("تقييم نطق حرف الثاء")
                 .font(.largeTitle)
+                .foregroundColor(lightGreen)
                 .fontWeight(.bold)
-                .padding(.top, 50)
-                .padding(.bottom, 50)
+                .padding(.top, 20)
 
             // Instruction for the user
             Text("حاول نطق حرف الثاء")
                 .font(.title)
+                .multilineTextAlignment(.center)
                 .padding()
             
             Text(audioRecorder.feedbackMessage)
                 .font(.headline)
                 .padding()
             
-            // Display the target letter "ث" in a larger font
-            Text("ث")
-                .font(.system(size: 300))
-                .frame(width: 500, height: 500)
-                .background(audioRecorder.isPassed ? Color.green : Color.gray)
-                .cornerRadius(10)
-                .foregroundColor(.white)
-                .animation(.easeInOut(duration: 0.5), value: audioRecorder.isPassed)
+            Image("THevaluation")
+                .resizable()
+                .scaledToFit() // Scales the image while maintaining aspect ratio
+                .frame(
+                    maxWidth: 600, // Maximum width for the image
+                        maxHeight: 550 // Maximum height for the image
+                                )
+                        
+                                .padding()
+                                .animation(.easeInOut(duration: 0.5), value: audioRecorder.isPassed)
 
             // Mic icon button
             Button(action: {
@@ -52,11 +56,14 @@ struct ThEvaluationContentView: View {
             Text("تأكد من نطق حرف الثاء بوضوح.")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
+                .multilineTextAlignment(.center)
+                .padding(.bottom, 20)
         }
         .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(UIColor.systemBackground))
     }
 }
-
 class ThAudioRecorder: NSObject, AVAudioRecorderDelegate, ObservableObject {
     @Published var feedbackMessage = ""
     @Published var isPassed = false

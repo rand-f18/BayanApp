@@ -4,33 +4,36 @@ import Speech
 
 struct GEvaluationContentView: View {
     @StateObject private var audioRecorder = GAudioRecorder()
-    
+    let lightGreen = Color(red: 0 / 255, green: 110 / 255, blue: 127 / 255)
+
     var body: some View {
-        VStack {
+        VStack(spacing: 20) {
             // Title at the very top
             Text("تقييم نطق حرف الجيم")
                 .font(.largeTitle)
+                .foregroundColor(lightGreen)
                 .fontWeight(.bold)
-                .padding(.top, 50)
-                .padding(.bottom, 50)
-
+                .padding(.top, 20)
             // Instruction for the user
             Text("حاول نطق حرف الجيم")
                 .font(.title)
+                .multilineTextAlignment(.center)
                 .padding()
-            
             Text(audioRecorder.feedbackMessage)
                 .font(.headline)
                 .padding()
             
-            // Display the target letter "ج" in a larger font
-            Text("ج")
-                .font(.system(size: 300))
-                .frame(width: 500, height: 500)
-                .background(audioRecorder.isPassed ? Color.green : Color.gray)
-                .cornerRadius(10)
-                .foregroundColor(.white)
-                .animation(.easeInOut(duration: 0.5), value: audioRecorder.isPassed)
+            // Dynamic image
+            Image("GEevaluation")
+                .resizable()
+                .scaledToFit() // Scales the image while maintaining aspect ratio
+                .frame(
+                    maxWidth: 600, // Maximum width for the image
+                        maxHeight: 550 // Maximum height for the image
+                                )
+                
+                                .padding()
+                                .animation(.easeInOut(duration: 0.5), value: audioRecorder.isPassed)
 
             // Mic icon button
             Button(action: {
@@ -52,8 +55,12 @@ struct GEvaluationContentView: View {
             Text("تأكد من نطق حرف الجيم بوضوح.")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
+                .multilineTextAlignment(.center)
+                .padding(.bottom, 20)
         }
         .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(UIColor.systemBackground))
     }
 }
 

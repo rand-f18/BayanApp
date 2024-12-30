@@ -4,24 +4,25 @@ import Speech
 
 struct GhEvaluationContentView: View {
     @StateObject private var audioRecorder = GhAudioRecorder()
-    
+    let lightGreen = Color(red: 0 / 255, green: 110 / 255, blue: 127 / 255)
+
     var body: some View {
         VStack {
             // Title at the very top
             Text("تقييم نطق حرف الغين")
                 .font(.largeTitle)
+                .foregroundColor(lightGreen)
                 .fontWeight(.bold)
-                .padding(.top, 50)
-                .padding(.bottom, 50)
+                .padding(.top, 20)
 
             // Instruction for the user
             Text("حاول نطق حرف الغين")
                 .font(.title)
+                .multilineTextAlignment(.center)
                 .padding()
-            
-            Text(audioRecorder.feedbackMessage)
-                .font(.headline)
-                .padding()
+//            Text(audioRecorder.feedbackMessage)
+//                .font(.headline)
+//                .padding()
             
             // Display the target letter "غ" in a larger font
             Text("غ")
