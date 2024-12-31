@@ -3,7 +3,7 @@ import SwiftUI
 struct LettersView: View {
     let lightGreen = Color(red: 0/255, green: 110/255, blue: 127/255)
     @ObservedObject var object = LettersViewModel()
-
+    @Environment(\.presentationMode) var presentationMode
     @State private var selectedLetter = LettterModel(
         letter: "ث",
         animel: "Th",
@@ -91,15 +91,14 @@ struct LettersView: View {
         .onAppear {
             print(object.letters)
         }
-        .navigationBarBackButtonHidden(true) // Hide default back button
-        .toolbar {
-            // Use the CustomBackButton with onBack action passed here
-            ToolbarItem(placement: .navigationBarLeading) {
-                CustomBackButton(onBack: {
-                    navigateToMap = false
-                })
-            }
-        }
+        .navigationBarBackButtonHidden(true) // Hide the default back button
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        CustomBackButton(onBack: {
+                            presentationMode.wrappedValue.dismiss() // Pop the view
+                        }, iconColor:.white) // Use light blue for this page
+                    }
+                }
     }
 }
 

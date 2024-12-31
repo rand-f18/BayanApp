@@ -10,7 +10,7 @@ struct SinEvaluationContentView: View {
     let darkRed = Color(red: 150 / 255, green: 0 / 255, blue: 0 / 255)
 
     var body: some View {
-        VStack(spacing: 20) {
+        VStack{
             // Title at the top
             Text("حاول نطق حرف السين")
                 .font(.system(size: UIScreen.main.bounds.width * 0.06))

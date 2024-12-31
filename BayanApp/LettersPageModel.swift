@@ -103,7 +103,7 @@ import SwiftUI
 
 struct CustomBackButton: View {
     let onBack: () -> Void
-    let lightGreen = Color(red: 0 / 255, green: 110 / 255, blue: 127 / 255)
+    let iconColor: Color
 
     var body: some View {
         Button(action: {
@@ -112,13 +112,12 @@ struct CustomBackButton: View {
             HStack {
                 Image(systemName: "arrow.left.circle.fill")
                     .font(.title)
-                    .foregroundColor(lightGreen)
-                Text("Back")
-                    .font(.headline)
-                    .foregroundColor(lightGreen)
+                    .foregroundColor(iconColor) // Use the passed color
+//                Text("Back")
+//                    .font(.headline)
+//                    .foregroundColor(iconColor) // Use the passed color
             }
         }
-        .navigationBarBackButtonHidden(true)  // Hide the default back button
     }
 }
 

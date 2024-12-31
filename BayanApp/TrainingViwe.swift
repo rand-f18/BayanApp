@@ -35,13 +35,7 @@ struct TrainingView: View {
         }
         .edgesIgnoringSafeArea(.top)
     
-        .navigationBarBackButtonHidden(true)  // Hide default back button
-        .toolbar {
-            // Use the CustomBackButton with onBack action passed here
-            ToolbarItem(placement: .navigationBarLeading) {
-                CustomBackButton(onBack: onBack)  // Pass the onBack closure
-            }
-        }
+        
     }
 }
 

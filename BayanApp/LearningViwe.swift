@@ -96,16 +96,7 @@ struct LearningView: View {
                 .padding()
             }
         }
-        .edgesIgnoringSafeArea(.top)
-        .navigationBarTitle("Letters", displayMode: .inline)  // Optional: Set the title for the navigation bar
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        CustomBackButton(onBack: {
-                            onBack()  // Call the passed closure first
-                            dismiss()  // Dismiss the current view (go back)
-                        })
-                    }
-                }
+        
     }
 }
 
