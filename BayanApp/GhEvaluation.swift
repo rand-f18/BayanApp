@@ -9,17 +9,12 @@ struct GhEvaluationContentView: View {
     var body: some View {
         VStack {
             // Title at the very top
-            Text("تقييم نطق حرف الغين")
-                .font(.largeTitle)
-                .foregroundColor(lightGreen)
-                .fontWeight(.bold)
-                .padding(.top, 20)
-
-            // Instruction for the user
             Text("حاول نطق حرف الغين")
-                .font(.title)
-                .multilineTextAlignment(.center)
-                .padding()
+                .font(.system(size: UIScreen.main.bounds.width * 0.06))
+                ///.foregroundColor(lightGreen)
+                .fontWeight(.medium)
+                .padding(.top, UIScreen.main.bounds.width * 0.2)
+
 
             // Feedback message
             if !audioRecorder.feedbackMessage.isEmpty {
@@ -60,6 +55,7 @@ struct GhEvaluationContentView: View {
 
             // User guidance
             Text("تأكد من نطق حرف الغين بوضوح.")
+                .font(.system(size: UIScreen.main.bounds.width * 0.025))
                 .font(.subheadline)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)

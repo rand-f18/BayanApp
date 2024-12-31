@@ -5,26 +5,25 @@ import Speech
 struct EvaluationContentView: View {
     @StateObject private var audioRecorder = AudioRecorder()
     let lightGreen = Color(red: 0 / 255, green: 110 / 255, blue: 127 / 255)
+    let darkRed = Color(red: 150 / 255, green: 0 / 255, blue: 0 / 255)
     var body: some View {
         VStack {
             // Title at the top
-            Text("تقييم نطق حرف الراء")
-                .font(.largeTitle)
-                .foregroundColor(lightGreen)
-                .fontWeight(.bold)
-                .padding(.top, 20)
-
-            // Instruction for the user
             Text("حاول نطق حرف الراء")
-                .font(.title)
-                .multilineTextAlignment(.center)
-                .padding()
+                .font(.system(size: UIScreen.main.bounds.width * 0.06))
+                ///.foregroundColor(lightGreen)
+                .fontWeight(.medium)
+                .padding(.top, UIScreen.main.bounds.width * 0.2)
+
+  
 
             // Feedback message
             if !audioRecorder.feedbackMessage.isEmpty {
                 Text(audioRecorder.feedbackMessage)
+                    .font(.system(size: UIScreen.main.bounds.width * 0.06))
                     .font(.headline)
                     .padding()
+                    .foregroundColor(audioRecorder.isPassed ? lightGreen : darkRed)
             }
             
             // Display the target letter in a larger font
@@ -58,6 +57,7 @@ struct EvaluationContentView: View {
 
             // Additional instruction
             Text("تأكد من نطق حرف الراء بوضوح.")
+                .font(.system(size: UIScreen.main.bounds.width * 0.025))
                 .font(.subheadline)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)

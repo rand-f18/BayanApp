@@ -9,17 +9,12 @@ struct ThEvaluationContentView: View {
     var body: some View {
         VStack (spacing: 20){
             // Title at the very top
-            Text("تقييم نطق حرف الثاء")
-                .font(.largeTitle)
-                .foregroundColor(lightGreen)
-                .fontWeight(.bold)
-                .padding(.top, 20)
-
-            // Instruction for the user
             Text("حاول نطق حرف الثاء")
-                .font(.title)
-                .multilineTextAlignment(.center)
-                .padding()
+                .font(.system(size: UIScreen.main.bounds.width * 0.06))
+                ///.foregroundColor(lightGreen)
+                .fontWeight(.medium)
+                .padding(.top, UIScreen.main.bounds.width * 0.2)
+
             
             // Feedback message
             if !audioRecorder.feedbackMessage.isEmpty {
@@ -57,6 +52,7 @@ struct ThEvaluationContentView: View {
 
             // User guidance
             Text("تأكد من نطق حرف الثاء بوضوح.")
+                .font(.system(size: UIScreen.main.bounds.width * 0.025))
                 .font(.subheadline)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
