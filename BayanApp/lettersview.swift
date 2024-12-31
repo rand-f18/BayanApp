@@ -29,7 +29,7 @@ struct LettersView: View {
             ZStack {
                 lightGreen
                     .ignoresSafeArea()
-                    .padding(.bottom,UIScreen.main.bounds.width * 0.05)
+                    .frame(height: UIScreen.main.bounds.height * 0.168) // Set a specific height for the light green area
 
                 HStack {  // Use HStack to align text and image
                     VStack(alignment: .leading) {
@@ -44,24 +44,23 @@ struct LettersView: View {
                     ZStack {
                         Circle()
                             .fill(Color.white)  // Background circle color
-                            .frame(width: UIScreen.main.bounds.width * 0.17, height: UIScreen.main.bounds.width * 0.17)  // Circle size
+                            .frame(width: UIScreen.main.bounds.width * 0.17)  // Circle size
 
                         Image(imageName)  // Use the image name to create an Image view
                             .resizable()
                             .scaledToFit()
-                            .frame(width: UIScreen.main.bounds.width * 0.15, height: UIScreen.main.bounds.width * 0.15)  // Adjust the image size
+                            .frame(width: UIScreen.main.bounds.width * 0.15)  // Adjust the image size
                             .clipShape(Circle())  // Make the image circular
                     }
                     .padding(.leading, 20) // Adjust spacing between text and image
-                    
                 }
+                .padding(.vertical, UIScreen.main.bounds.height * 0.02) // Adjust vertical padding only
             }
-            .frame(maxWidth: .infinity, maxHeight: UIScreen.main.bounds.height * 0.3) // Responsive frame height
+            .frame(maxWidth: .infinity) // Keep max width for the ZStack
             
-
             ScrollView {
                 // Letters grid
-                LazyVGrid(columns: columns, spacing: UIScreen.main.bounds.height * 0.02) { // Spacing between grid items
+                LazyVGrid(columns: columns) { // Spacing between grid items
                     ForEach(object.letters.indices, id: \.self) { index in
                         let letter = object.letters[index]
                         Button(action: {
@@ -73,8 +72,8 @@ struct LettersView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(
-                                        width: UIScreen.main.bounds.width * 0.5, // 40% of screen width
-                                        height: UIScreen.main.bounds.width * 0.5 // Keep square aspect ratio
+                                        width: UIScreen.main.bounds.width * 0.42, // 40% of screen width
+                                        height: UIScreen.main.bounds.width * 0.42 // Keep square aspect ratio
                                     )
                                     .cornerRadius(10)
                             }
@@ -97,8 +96,6 @@ struct LettersView: View {
             // Use the CustomBackButton with onBack action passed here
             ToolbarItem(placement: .navigationBarLeading) {
                 CustomBackButton(onBack: {
-                    // Define the action to be performed when the custom back button is tapped
-                    // For example, you can pop the current view
                     navigateToMap = false
                 })
             }

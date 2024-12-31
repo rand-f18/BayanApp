@@ -55,7 +55,6 @@ struct KEvaluationContentView: View {
                     .frame(width: 75, height: 75)
                     .foregroundColor(audioRecorder.isRecording ? Color.red : Color.black)
                     .padding(.bottom, 20)
-
             }
 
             // User guidance

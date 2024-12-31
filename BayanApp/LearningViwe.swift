@@ -43,14 +43,15 @@ struct LearningView: View {
                                         .foregroundColor(lightGreen)
                                         .shadow(radius: 5)
                                 }
+                                .padding(.trailing, UIScreen.main.bounds.width * 0.1)
                                 
                             }
                             Image(letter.buttonImage)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(
-                                    width: UIScreen.main.bounds.width * 0.9,
-                                    height: UIScreen.main.bounds.width * 0.9
+                                    width: UIScreen.main.bounds.width * 0.5,
+                                    height: UIScreen.main.bounds.width * 0.5
                                 )
                                 .cornerRadius(10)
                         }
@@ -107,3 +108,4 @@ struct LearningView: View {
                 }
     }
 }
+
