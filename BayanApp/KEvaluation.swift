@@ -5,6 +5,7 @@ import Speech
 struct KEvaluationContentView: View {
     @StateObject private var audioRecorder = KAudioRecorder()
     let lightGreen = Color(red: 0 / 255, green: 110 / 255, blue: 127 / 255)
+    let darkRed = Color(red: 150 / 255, green: 0 / 255, blue: 0 / 255)
     var body: some View {
         VStack {
             // Title at the very top
@@ -18,8 +19,11 @@ struct KEvaluationContentView: View {
             // Feedback message
             if !audioRecorder.feedbackMessage.isEmpty {
                 Text(audioRecorder.feedbackMessage)
+                    .font(.system(size: UIScreen.main.bounds.width * 0.06))
                     .font(.headline)
                     .padding()
+                    .foregroundColor(audioRecorder.isPassed ? lightGreen : darkRed)
+
             }
             
             // Display the target letter "ك" in a larger font
