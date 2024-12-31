@@ -29,8 +29,9 @@ struct LettersView: View {
             ZStack {
                 lightGreen
                     .ignoresSafeArea()
+                    .padding(.bottom,39)
                     .frame(height: UIScreen.main.bounds.height * 0.168) // Set a specific height for the light green area
-
+                    
                 HStack {  // Use HStack to align text and image
                     VStack(alignment: .leading) {
                         Text("مرحبًا \(name)، لنبدأ بالتعلم!")
