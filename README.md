@@ -8,9 +8,6 @@ This SwiftUI application helps users learn and pronounce Arabic letters correctl
 - 🔊 **Audio Recording & Analysis:** Uses Apple's **AVFoundation** and **Speech Framework** to recognize Arabic letters.
 - 📖 **Learning & Training Guide:** Each letter includes a description of how to pronounce it properly.
 
-## 📱 Screenshots
-![App Screenshot 1](screenshots/screenshot1.png)  
-![App Screenshot 2](screenshots/screenshot2.png)
 
 ## 📜 Installation
 1. **Clone the Repository**  
@@ -59,4 +56,11 @@ This project is licensed under the MIT License.
 **🤝 Contributing**
 
 Contributions are welcome! Please submit a pull request or open an issue for suggestions.
+
+
+**📩 Have Questions? Contact Me!**
+📧 Email: Wafaalmutery7@gmail.com
+🌐 GitHub: Wafa14161995
+
+
 
