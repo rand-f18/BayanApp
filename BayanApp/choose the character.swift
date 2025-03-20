@@ -1,15 +1,16 @@
+
 import SwiftUI
 
 struct CharacterPage: View {
     // Colors and States
-    let lightGreen = Color(red: 0/255, green: 110/255, blue: 127/255)
+    private let lightGreen = Color(red: 0/255, green: 110/255, blue: 127/255)
     @State private var name: String = ""
     @State private var selectedCharacter: String? = nil
     @State private var showAlert = false
     @State private var navigateToLettersView = false
     @State private var selectedImageName: String = ""
 
-    // Dynamic button data
+    // Character Selection Data
     let buttonData: [(imageName: String, label: String)] = [
         (imageName: "Girl", label: "girl1"),
         (imageName: "happyboy", label: "boy1")
@@ -18,46 +19,37 @@ struct CharacterPage: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: UIScreen.main.bounds.height * 0.05) {
-                // Header Texts
+                // MARK: - Header Texts
                 VStack(spacing: UIScreen.main.bounds.height * 0.02) {
                     Text("مرحباً أيها البطل!")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
-                        .padding(.top, UIScreen.main.bounds.height * 0.2)
+                        .padding(.top, UIScreen.main.bounds.height * 0.15)
 
                     Text("اختر شخصية طفلك")
                         .font(.headline)
                         .multilineTextAlignment(.center)
                 }
 
-                // Buttons Section
-                VStack(spacing: UIScreen.main.bounds.height * 0.02) {
-                    LazyVGrid(
-                        columns: [
-                            GridItem(.flexible()),
-                            GridItem(.flexible())
-                        ],
-                        spacing: UIScreen.main.bounds.height * 0.05
-                    ) {
-                        ForEach(buttonData, id: \.imageName) { data in
-                            Button(action: {
-                                selectedCharacter = data.label
-                                selectedImageName = data.imageName
-                            }) {
-                                CircleButtonView(
-                                    imageName: data.imageName,
-                                    isSelected: selectedCharacter == data.label
-                                )
-                            }
+                // MARK: - Character Selection
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 120))], spacing: 20) {
+                    ForEach(buttonData, id: \.imageName) { data in
+                        Button(action: {
+                            selectedCharacter = data.label
+                            selectedImageName = data.imageName
+                        }) {
+                            CircleButtonView(
+                                imageName: data.imageName,
+                                isSelected: selectedCharacter == data.label
+                            )
                         }
                     }
-                    .padding(.horizontal, UIScreen.main.bounds.width * 0.1)
-
                 }
+                .padding(.horizontal)
 
-                // Name Input Section
-                VStack(spacing: UIScreen.main.bounds.height * 0.02) {
+                // MARK: - Name Input
+                VStack(spacing: 10) {
                     Text("أدخل اسم طفلك")
                         .font(.headline)
                         .multilineTextAlignment(.center)
@@ -66,14 +58,14 @@ struct CharacterPage: View {
                         .padding()
                         .background(Color(.systemGray6))
                         .cornerRadius(20)
-                        .padding(.horizontal, UIScreen.main.bounds.width * 0.1)
+                        .padding(.horizontal, 40)
                 }
 
                 Spacer()
 
-                // Red Button
+                // MARK: - Navigation Button
                 NavigationLink(
-                    destination: LettersView(name: $name, imageName: $selectedImageName),  // Pass the binding
+                    destination: LettersView(name: $name, imageName: $selectedImageName),
                     isActive: $navigateToLettersView
                 ) {
                     Button(action: {
@@ -90,11 +82,9 @@ struct CharacterPage: View {
                             .padding()
                             .background(lightGreen)
                             .cornerRadius(10)
-                            .padding(.horizontal, UIScreen.main.bounds.width * 0.1)
+                            .padding(.horizontal, 40)
                     }
                 }
-                .padding(.top, UIScreen.main.bounds.height * 0.02)
-                .padding(.bottom, UIScreen.main.bounds.height * 0.05)
                 .alert(isPresented: $showAlert) {
                     Alert(
                         title: Text("تنبيه"),
@@ -102,12 +92,13 @@ struct CharacterPage: View {
                         dismissButton: .default(Text("حسناً"))
                     )
                 }
+                .padding(.bottom, UIScreen.main.bounds.height * 0.05)
             }
         }
     }
 }
 
-// Reusable Circle Button Component
+// MARK: - Circle Button Component
 struct CircleButtonView: View {
     let imageName: String
     let isSelected: Bool
@@ -116,7 +107,7 @@ struct CircleButtonView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
                 .fill(isSelected ? Color.yellow.opacity(0.2) : Color(.systemGray6))
-                .frame(width: UIScreen.main.bounds.width * 0.28, height: UIScreen.main.bounds.width * 0.28) // Geometric size
+                .frame(width: 120, height: 120)
                 .overlay(
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(isSelected ? Color.yellow : Color.clear, lineWidth: 4)
@@ -126,17 +117,17 @@ struct CircleButtonView: View {
             Image(imageName)
                 .resizable()
                 .scaledToFit()
-                .frame(width: UIScreen.main.bounds.width * 0.25, height: UIScreen.main.bounds.width * 0.25) // Geometric size
+                .frame(width: 100, height: 100)
         }
         .animation(.easeInOut, value: isSelected)
     }
 }
 
-// Preview Provider
+// MARK: - Preview
 struct CharacterPage_Previews: PreviewProvider {
     static var previews: some View {
         CharacterPage()
-            .previewDevice("iPhone 14") // Preview on an iPhone 14
-            .environment(\.locale, .init(identifier: "ar")) // Set Arabic locale for preview
+            .previewDevice("iPhone 14")
+            .environment(\.locale, .init(identifier: "ar")) // Arabic layout
     }
 }

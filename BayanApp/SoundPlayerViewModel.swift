@@ -4,10 +4,8 @@ import AVFoundation
 class SoundPlayerViewModel: ObservableObject {
     @Published var isMuted: Bool = false
     private var audioPlayer: AVAudioPlayer?
-    private var currentLetter: LettterModel
 
-    init(letter: LettterModel) {
-        self.currentLetter = letter
+    init(letter: LetterModel) {
         loadSound(named: letter.sound)
     }
 
@@ -19,25 +17,23 @@ class SoundPlayerViewModel: ObservableObject {
 
         do {
             audioPlayer = try AVAudioPlayer(data: soundData)
-            audioPlayer?.numberOfLoops = -1 // Loop indefinitely
+            audioPlayer?.numberOfLoops = -1
             audioPlayer?.prepareToPlay()
-            audioPlayer?.play() // Start playing sound immediately after loading
         } catch {
-            print("Error loading or playing sound: \(error)")
+            print("Error loading sound: \(error)")
         }
     }
 
     func toggleSound() {
         if isMuted {
-            audioPlayer?.play() // Play if muted
+            audioPlayer?.play()
         } else {
-            audioPlayer?.pause() // Pause if playing
+            audioPlayer?.pause()
         }
         isMuted.toggle()
     }
 
-    func updateLetter(to newLetter: LettterModel) {
-        self.currentLetter = newLetter
+    func updateLetter(to newLetter: LetterModel) {
         loadSound(named: newLetter.sound)
         if !isMuted {
             audioPlayer?.play()

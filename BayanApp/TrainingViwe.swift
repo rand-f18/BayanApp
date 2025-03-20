@@ -1,11 +1,13 @@
 import SwiftUI
 
 struct TrainingView: View {
-    @Binding var letter: LettterModel
+    @Binding var letter: LetterModel 
     let onComplete: () -> Void
     let onBack: () -> Void
-    let lightGreen = Color(red: 0 / 255, green: 110 / 255, blue: 127 / 255)
-
+    
+    // Made `lightGreen` a private constant
+    private let lightGreen = Color(red: 0 / 255, green: 110 / 255, blue: 127 / 255)
+    
     var body: some View {
         VStack(spacing: 20) {
             ZStack {
@@ -13,16 +15,16 @@ struct TrainingView: View {
                 RoundedRectangle(cornerRadius: 25)
                     .foregroundColor(.secondary.opacity(0.1))
                     .padding()
-
+                
                 VStack(spacing: 20) {
                     Text(letter.descrTraining)
                         .font(.headline)
-                        .padding()
                         .multilineTextAlignment(.center)
-
+                        .padding()
+                    
                     Spacer(minLength: 20)
-
-                    // MARK: Buttons Section
+                    
+                    // Buttons Section
                     HStack(spacing: 20) {
                         Button("إكمال المستوى") {
                             onComplete()
@@ -34,8 +36,5 @@ struct TrainingView: View {
             }
         }
         .edgesIgnoringSafeArea(.top)
-    
-        
     }
 }
-

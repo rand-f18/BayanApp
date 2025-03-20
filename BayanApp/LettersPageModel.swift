@@ -2,7 +2,7 @@ import SwiftUI
 import Foundation
 
 // Corrected model name
-struct LettterModel: Identifiable {
+struct LetterModel: Identifiable {
     var id: UUID = UUID()
     var letter: String
     var animel: String
@@ -16,12 +16,12 @@ struct LettterModel: Identifiable {
 // ViewModel for managing letters data
 class LettersViewModel: ObservableObject {
     // Published property for the letters
-    @Published var letters: [LettterModel]
+    @Published var letters: [LetterModel]
 
     // Initialize with mock data
     init() {
         self.letters = [
-            LettterModel(
+            LetterModel(
                 letter: "ث",
                 animel: "fox",
                 sound: "ThLetter",
@@ -30,7 +30,7 @@ class LettersViewModel: ObservableObject {
                 ImageProunounce: "Th",
                 buttonImage: "FoxButtton"
             ),
-            LettterModel(
+            LetterModel(
                 letter: "ج",
                 animel: "camel",
                 sound: "Gletter",
@@ -39,7 +39,7 @@ class LettersViewModel: ObservableObject {
                 ImageProunounce: "Gem",
                 buttonImage: "camelButton"
             ),
-            LettterModel(
+            LetterModel(
                 letter: "خ",
                 animel: "sheep",
                 sound: "KhLetter",
@@ -48,7 +48,7 @@ class LettersViewModel: ObservableObject {
                 ImageProunounce: "Kh",
                 buttonImage: "SheepButton"
             ),
-            LettterModel(
+            LetterModel(
                 letter: "ر",
                 animel: "Raccoon",
                 sound: "Rletter",
@@ -57,7 +57,7 @@ class LettersViewModel: ObservableObject {
                 ImageProunounce: "Ra",
                 buttonImage: "RacconButton"
             ),
-            LettterModel(
+            LetterModel(
                 letter: "س",
                 animel: "turtle",
                 sound: "Sletter",
@@ -66,7 +66,7 @@ class LettersViewModel: ObservableObject {
                 ImageProunounce: "Sa",
                 buttonImage: "TurtleButton"
             ),
-            LettterModel(
+            LetterModel(
                 letter: "ش",
                 animel: "lion",
                 sound: "ShLetter",
@@ -75,7 +75,7 @@ class LettersViewModel: ObservableObject {
                 ImageProunounce: "Shen",
                 buttonImage: "LionButton"
             ),
-            LettterModel(
+            LetterModel(
                 letter: "غ",
                 animel: "gazelle",
                 sound: "Ghletter",
@@ -84,7 +84,7 @@ class LettersViewModel: ObservableObject {
                 ImageProunounce: "Gen",
                 buttonImage: "GazelleButton"
             ),
-            LettterModel(
+            LetterModel(
                 letter: "ك",
                 animel: "kangaroo",
                 sound: "Kletter",
